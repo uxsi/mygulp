@@ -23,6 +23,7 @@ gulp.task('build:style',function(cb){
 gulp.task('build',function(cb){
   br.create().init({
     server: {baseDir: './dist'},
+    open: false,
     https: true,
     port: 8089
   });
