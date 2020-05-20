@@ -1,3 +1,5 @@
+@import "light";
+@import "dark";
 :root{
   --globalColor:rgba(0,0,0,.9);
 }
@@ -9,3 +11,79 @@
 :root([color-scheme='dark']){
   --globalColor:rgba(255,255,255,.8);
 }
+
+
+.light(@rule) {
+  :root {
+    @rule();
+  }
+}
+
+.dark(@rule) {
+  html[data-theme='dark'] & {
+    @rule();
+  }
+  // stylelint-disable-next-line
+  @media(prefers-color-scheme:dark) {
+    :root & {
+      @rule();
+    }
+  }
+}
+
+.setColor(@rule) {
+  .setColor(@rule[var], @rule[light], @rule[dark]);
+}
+.setColor(@var, @color) {
+  .setColor(@var, @color, @color);
+}
+.setColor(@var, @light, @dark) {
+  .light({
+    @{var}: @light;
+  });
+  .dark({
+    @{var}: @dark;
+  });
+}
+
+/* stylelint-disable */
+.setGlobalColorVariables(@mode) {
+  each(range(6), { 
+    @i: @value - 1;
+    @t: '@{mode}_BG_@{i}';
+    --BG-@{i}: @@t;
+  })
+
+  @fgList: 0 HALF 1 2 3;
+  each(@fgList, { 
+    @i: @value;
+    @t: '@{mode}_FG_@{i}';
+    --FG-@{i}: @@t;
+  })
+
+  @colorList: 
+    RED, ORANGE, YELLOW, GREEN, LIGHTGREEN, BRAND, BLUE, INDIGO, PURPLE, LINK, TEXTGREEN, FG, BG;
+  each(@colorList, {
+    @color: @value;
+    @t: '@{mode}_@{color}';
+    --@{color}: @@t;
+  })
+
+  @tagList: ORANGE, GREEN, BLUE, BLACK;
+  each(@tagList, {
+    @color: @value;
+    @tt: '@{mode}_TAG_TEXT_@{color}';
+    --TAG-TEXT-@{color}: @@tt;
+    
+    @tb: '@{mode}_TAG_BACKGROUND_@{color}';
+    --TAG-BACKGROUND-@{color}: @@tb;
+  })
+}
+
+.light({
+  .setGlobalColorVariables(LIGHT);
+});
+
+.dark({
+  .setGlobalColorVariables(DARK);
+});
