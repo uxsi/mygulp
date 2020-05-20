@@ -33,6 +33,6 @@ gulp.task('build',function(){
 });
 
 
-gulp.watch('src/**/*.less',gulp.series('build:style'));
+gulp.watch('src/**/**',gulp.series('build:html','build:style'));
 gulp.task('default',gulp.series('build:html','build:style','build'));
 
