@@ -1,8 +1,6 @@
 @import "fn";
 
 body{
-  color:var(--globalColor);
-  background:green;
   font-family:-apple-system-font,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
 }
 p{
@@ -13,4 +11,23 @@ p{
 .fw500{font-weight:500;}
 .fw700{font-weight:700;}
 
+@font-face {
+  font-family: "notosans-sc-medium";
+  src: url("../NotoSansSC-Medium.otf");
+}
+@font-face {
+  font-family: "notosans-sc-bold";
+  src: url("../NotoSansSC-Bold.otf");
+}
+
+.noto_500{
+  font-family: "notosans-sc-medium";
+}
+.noto_700{
+  font-family: "notosans-sc-bold";
+}
+
+.noto1{font-weight:400;}
+.noto2{font-weight:500;}
+.noto3{font-weight:700;}
 

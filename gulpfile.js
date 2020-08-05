@@ -5,6 +5,12 @@ var sourcemaps = require('gulp-sourcemaps');
 
 var option='';
 
+gulp.task('build:res',function(cb){
+  gulp.src('src/**/**',option)
+  .pipe(gulp.dest('dist'))
+  cb();
+});
+
 gulp.task('build:html',function(cb){
   gulp.src('src/**/*.html',option)
   .pipe(gulp.dest('dist'))
@@ -33,6 +39,6 @@ gulp.task('build',function(){
 });
 
 
-gulp.watch('src/**/**',gulp.series('build:html','build:style'));
-gulp.task('default',gulp.series('build:html','build:style','build'));
+gulp.watch('src/**/**',gulp.series('build:html','build:style','build:res'));
+gulp.task('default',gulp.series('build:html','build:style','build:res','build'));
 
