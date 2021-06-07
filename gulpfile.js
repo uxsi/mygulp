@@ -2,8 +2,16 @@ var gulp = require('gulp');
 var br = require('browser-sync');
 var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
+var docx2html=require('docx2html');
 
 var option='';
+
+gulp.task('build:docx',function(cb){
+  docx2html("src/**/test.docx").then(function(html){
+    html.toString()
+  })
+  cb();
+});
 
 gulp.task('build:res',function(cb){
   gulp.src('src/**/**',option)
@@ -40,5 +48,5 @@ gulp.task('build',function(){
 
 
 gulp.watch('src/**/**',gulp.series('build:html','build:style','build:res'));
-gulp.task('default',gulp.series('build:html','build:style','build:res','build'));
+gulp.task('default',gulp.series('build:html','build:style','build:docx','build:res','build'));
 

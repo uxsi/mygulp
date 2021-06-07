@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title></title>
+  <style>
+    .mask{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,3);}
+    .dialog{position:fixed;bottom:0;z-index:1;left:0;right:0;} 
+  </style>
+</head>
+<body>
+  <button id="showDialog" type="button">弹窗</button>
+  <p>Amet minima odio ut fugiat consequatur. Ab explicabo neque et</p>
+  <div id="js_dialog_wrp" role="dialog" aria-modal="true" class="dialog_wrp" style="display:none;">
+    <div class="mask"></div>
+    <div class="dialog">
+      <strong class="dialog_title" id="js_dialog_title">标题</strong>
+      <p class="dialog_desc">描述内容</p>
+    </div>
+  </div>
+  <script src="https://zeptojs.com/zepto.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      var $dialogWrp = $('#js_dialog_wrp');
+      var $dialogTitle = $('#js_dialog_title');
+
+      $('#showDialog').on('click', function(){
+        $dialogWrp.css('display','block');
+        $dialogTitle.attr('tabindex','0');
+        $dialogTitle.trigger('focus');
+      });
+
+    });
+
+  </script>
+</body>
+</html>
