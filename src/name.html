@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <style>
+.btn{
+  width:100px;
+  height:20px;
+  background:red;
+  display:inline-block;
+}
+.ge:before{content:"hi";}
+  </style>
+</head>
+<body>
+  <span role="checkbox">
+    hello
+    <span aria-label="hi">title</span>
+  </span>
+  <span role="checkbox">
+    hello
+    <span title="hi">title</span>
+  </span>
+
+  <button title="hi">赞</button>
+
+  <label>
+    <span aria-label="hi" id="one" role="textbox" aria-multiline="false"> one </span>
+    label
+  </label>
+
+  <div role="checkbox" aria-checked="false">Flash the screen <span role="textbox" aria-label="name" aria-multiline="false"> one </span> times</div>
+  <span role="checkbox">
+    hi
+    <span role="textbox" aria-label="name">x</span>
+  </span>
+  <span role="checkbox">
+    hi
+    <button aria-label="name">x</button>
+  </span>
+  <div role="button">Flash<span aria-label="test"> hello </span> times</div>
+  <span  id="te" aria-labelledby="file_row2" title="test" role="button" class="btn">one</span>
+  <label aria-labelledby="te">hi</label>
+  <ul>
+  <li>
+    <a id="file_row2" href="./files/HolidayLetter.pdf">HolidayLetter.pdf</a>
+    <span class="btn" role="button" tabindex="0" id="del_row2" aria-label="Delete" aria-labelledby="del_row1 file_row2"></span>
+  </li>
+  <li>
+    <a style="display:none" aria-hidden="true" id="file_row1" href="./files/Documentation.pdf">Documentation.pdf</a>
+    <span role="button" class="btn" tabindex="0" id="del_row1" aria-labelledby="file_row1"></span>
+  </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <progress id="progress-bar" value="0" max="100">0% complete</progress>
+  <button id="update-button">Update</button>
+  <script>
+    var progressBar = document.getElementById("progress-bar");
+    var supportsHTML5Progress = (typeof (HTMLProgressElement) !== "undefined");
+
+    function setupProgress() {
+    if (!supportsHTML5Progress) {
+        progressBar.setAttribute("role", "progressbar");
+        progressBar.setAttribute("aria-valuemin", 0);
+        progressBar.setAttribute("aria-valuemax", 100);
+      }
+    }
+
+    function updateProgress(percentComplete) {
+      if (!supportsHTML5Progress) {
+        progressBar.setAttribute("aria-valuenow", percentComplete);
+        } else {
+          progressBar.setAttribute("value", percentComplete);
+      }
+
+      progressBar.textContent = percentComplete + "% complete";
+    }
+
+    function initDemo() {
+      setupProgress(); // Setup the progress bar.
+
+      document.getElementById("update-button").addEventListener("click", function (e) {
+        updateProgress(75);
+        e.preventDefault();
+      }, false);
+    }
+
+    initDemo();
+  </script>
+</body>
+</html>

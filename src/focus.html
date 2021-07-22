@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title></title>
+  <style>
+    /* 聚焦加红边框 */
+    button{
+      outline:4px solid red;
+    }
+  </style>
+</head>
+<body>
+  <button class="js_btn" type="button">自动聚焦</button>
+  <a href="https://weixin.qq.com">跳转首页</a>
+  <script src="https://zeptojs.com/zepto.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('.js_btn').trigger('focus');
+    });
+  </script>
+</body>
+</html>
+

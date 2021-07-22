@@ -5,6 +5,12 @@ var sourcemaps = require('gulp-sourcemaps');
 
 var option='';
 
+gulp.task('build:js',function(cb){
+  gulp.src('src/**/*.js',option)
+  .pipe(gulp.dest('dist'))
+  cb();
+});
+
 gulp.task('build:html',function(cb){
   gulp.src('src/**/*.html',option)
   .pipe(gulp.dest('dist'))
@@ -28,11 +34,11 @@ gulp.task('build',function(){
     files: '**',
     open: false,
     //https: true,
-    port: 8089
+    port: 8088
   });
 });
 
 
-gulp.watch('src/**/**',gulp.series('build:html','build:style'));
-gulp.task('default',gulp.series('build:html','build:style','build'));
+gulp.watch('src/**/**',gulp.series('build:html','build:js','build:style'));
+gulp.task('default',gulp.series('build:html','build:js','build:style','build'));
 

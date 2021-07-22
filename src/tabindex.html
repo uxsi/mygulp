@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="screen-orientation" content="portrait">
+  <meta name="x5-orientation" content="portrait">
+  <title></title>
+  <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/2.4.4/weui.min.css" media="all">
+
+  <style>
+.hidden{
+  position:absolute;width:0;height:0;overflow:hidden;
+}
+  </style>
+</head>
+
+<body>
+  <div role="button" aria-labelledby="bux">
+    test
+    <div role="option" aria-label="yes" id="bux">
+      <span>hello</span>
+      <div>x</div>
+    </div>
+  </div>
+
+  <div role="link" class="weui-cell weui-cell_active weui-cell_access">
+    <span class="weui-cell__bd">
+      <span class="display:block;">单行列表</span>
+      <span style="">
+      <span class="weui-badge">8</span>
+      </span>
+    </span>
+    <span class="weui-cell__ft"></span>
+    <span class="hidden">&nbsp;</span>
+  </div>
+
+  <div>
+    <label for="xt">test</label>
+    <input type="text" aria-label="标题">
+    <input id="xt" type="text" aria-label="hi">
+  </div>
+  
+  <div>
+  <button tabindex="2">0</button>
+  <button tabindex="0">1</button>
+<button tabindex="1">2</button>
+<button tabindex="0">3</button>
+<button tabindex="-1">4</button>
+<button tabindex="4">5</button>
+  </div>
+
+  <div role="link">
+    <strong>标题</strong>
+    <span>描述内容</span>
+  </div>
+
+  <div>
+  <button aria-labelledby="x1">你好</button>
+  <button id="x1" aria-labelledby="x2">关闭</button>
+  <span id="x2">x</span>
+  </div>
+
+
+  <div>
+    <label for="xh">
+      test
+      <input type="button" aria-label="标题" value="hi">
+    </label>
+    <input type="text" id="xh">
+  </div>
+
+  <div>
+    <label for="h">
+      test
+      <button aria-label="title">内容</button>
+    </label>
+    <input type="text" aria-label="标题" id="h" value="hi">
+  </div>
+
+
+  <button aria-labelledby="op">test</button>
+  <div id="op">
+    test
+    <input type="text" aria-label="标题" value="hi">
+  </div>
+
+  <div id="op">
+    test
+    <input type="text" aria-label="标题" value="hi">
+  </div>
+
+
+  <label for="menubutton">hi</label>
+  <div class="menu_button">
+    <button aria-label="标题" id="menubutton"
+      aria-haspopup="true"
+      aria-controls="menu2">
+      内容
+    </button>
+    <ul id="menu2"
+      role="menu"
+      aria-labelledby="menubutton">
+      <li role="none">
+        <a role="menuitem" href="https://www.w3.org/">
+          W3C Home Page
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <label for="hi">
+      test
+      <button aria-label="标题">hello</button>
+    </label>
+    <input type="text" id="hi">
+  </div>
+
+
+  <div>
+    <label for="it">
+      test
+      <input id="it" type="text" aria-label="标题" value="输入">
+    </label>
+  </div>
+
+  <div>
+    <label for="btn">标签</label>
+    <div id="btn" aria-labelledby="by" role="button">内容</div>
+    <span id="by">引用</span>
+  </div>
+
+
+
+
+  <script src="./wah.js"></script>
+  <script>
+    WAH.default.init()
+  </script>
+
+</body>
+</html>
+

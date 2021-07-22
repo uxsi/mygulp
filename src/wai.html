@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <link rel="shortcut icon" type="image/x-icon" href="//res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico">
+  <link rel="mask-icon" href="//res.wx.qq.com/a/wx_fed/assets/res/MjliNWVm.svg" color="#4C4C4C">
+  <link rel="apple-touch-icon-precomposed" href="//res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png">
+  <meta name="color-scheme" content="light dark">
+  <title>x</title>
+</head>
+<body>
+
+  <form name="signup" id="signup" method="post" action="">
+    <p id="errors" role="alert" aria-atomic="true"></p>
+    <p>
+      <label for="first">First Name (required)</label><br>
+      <input type="text" name="first" id="first">
+    </p>
+    <p>
+      <label for="last">Last Name (required)</label><br>
+      <input type="text" name="last" id="last">
+    </p>
+    <p>
+      <label for="email">Email (required)</label><br>
+      <input type="text" name="email" id="email">
+    </p>
+    <p>
+      <input type="submit" name="button" id="button" value="Submit Submit Submit Submit">
+    </p>
+  </form>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script>
+    $(document).ready(function(e) {
+      $('#signup').submit(function() {
+        $('#errors').html('');
+        if ($('#first').val() === '') {
+          $('#errors').append('<p>Please enter your first name.</p>');
+        }
+        if ($('#last').val() === '') {
+          $('#errors').append('<p>Please enter your last name.</p>');
+        }
+        if ($('#email').val() === '') {
+          $('#errors').append('<p>Please enter your email address.</p>');
+        }
+        return false;
+      });
+    });
+  </script>
+</body>
+</html>

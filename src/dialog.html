@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title></title>
+  <style>
+    .mask{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,3);}
+    .dialog{position:fixed;bottom:0;z-index:1;left:0;right:0;height:300px;} 
+  </style>
+</head>
+<body>
+  <a href="javascript:;" id="btn">弹窗</a>
+  <div id="dialog" role="dialog" aria-modal="true" class="dialog_wrp" style="display:none;">
+    <div class="mask"></div>
+    <div class="dialog">
+      <strong class="dialog_title" id="title">标题</strong>
+      <button id="close" type="button">关闭</button>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var btn = document.getElementById("btn");
+    var close = document.getElementById("close");
+    var dialog = document.getElementById("dialog");
+    var title = document.getElementById("title");
+		btn.addEventListener('click',function(){
+      dialog.style.display="block";
+      close.setAttribute('tabindex','0');
+      close.focus();
+		},false)
+		close.addEventListener('click',function(){
+      dialog.style.display="none";
+      btn.focus();
+		},false)
+  </script>
+</body>
+</html>
