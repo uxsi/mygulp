@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="./combobox-1.1.css" media="all">
+</head>
+<body>
+  <div id="box" role="combobox" aria-labelledby="input" aria-haspopup="listbox" aria-expanded="false" aria-owns="list">
+    <input id="input" type="text" aria-label="title" aria-autocomplete="both" aria-controls="list">
+    <div role="button" id="cancel" aria-hidden="true">取消</button>
+  </div>
+  <ul style="display:none" role="listbox" id="list">
+    <li role="option">apple</li>
+    <li role="option">banana</li>
+  </ul> 
+  <script>
+    var box = document.getElementById("box")
+    var input = document.getElementById("input")
+    var cancel = document.getElementById("cancel")
+    var list = document.getElementById("list")
+		box.addEventListener('click',function(){
+      input.focus();
+    })
+  </script>
+</body>
+</html>

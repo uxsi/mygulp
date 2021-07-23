@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="./combobox-1.1.css" media="all">
+  <script src="./utils.js"></script>
+  <script src="./listbox-combobox.js"></script>
+  <script src="./listbox-combo-example.js"></script>
+</head>
+<body>
+
+  <label id="ex3-label" class="combobox-label">
+    Choice 3 Fruit or Vegetable
+  </label>
+  <div class="combobox-wrapper">
+    <div role="combobox"
+      aria-expanded="false"
+      aria-owns="ex3-listbox"
+      aria-haspopup="listbox"
+      id="ex3-combobox">
+      <input type="text"
+      aria-autocomplete="both"
+      aria-controls="ex3-listbox"
+      aria-labelledby="ex3-label"
+      id="ex3-input">
+      <div class="combobox-dropdown"
+        id="ex3-combobox-arrow"
+        tabindex="-1"
+        role="button"
+        aria-label="Show vegetable options">
+        搜索
+      </div>
+    </div>
+    <ul aria-labelledby="ex3-label"
+      role="listbox"
+      id="ex3-listbox"
+      class="listbox hidden">
+    </ul>
+  </div>
+
+  <label for="ex1-input"
+    id="ex1-label"
+    class="combobox-label">
+    Choice 1 Fruit or Vegetable
+  </label>
+  <div class="combobox-wrapper">
+    <div role="combobox"
+      aria-expanded="false"
+      aria-owns="ex1-listbox"
+      aria-haspopup="listbox"
+      id="ex1-combobox">
+      <input type="text"
+      aria-autocomplete="list"
+      aria-controls="ex1-listbox"
+      id="ex1-input">
+    </div>
+    <ul aria-labelledby="ex1-label"
+      role="listbox"
+      id="ex1-listbox"
+      class="listbox hidden">
+    </ul>
+  </div>
+
+  <label id="ex2-label" class="combobox-label">
+    Choice 2 Fruit or Vegetable
+  </label>
+  <div class="combobox-wrapper">
+    <div role="combobox"
+      aria-expanded="false"
+      aria-owns="ex2-listbox"
+      aria-haspopup="listbox"
+      id="ex2-combobox">
+      <input type="text"
+      aria-autocomplete="both"
+      aria-controls="ex2-listbox"
+      aria-labelledby="ex2-label"
+      id="ex2-input">
+    </div>
+    <ul aria-labelledby="ex2-label"
+      role="listbox"
+      id="ex2-listbox"
+      class="listbox hidden">
+    </ul>
+  </div>
+
+  <div id="box" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list">
+    <input id="input" type="text" aria-autocomplete="both" aria-controls="list">
+    <div role="button" tabindex="-1">搜索</button>
+  </div>
+  <ul style="display:none" role="listbox" id="list">
+    <li role="option">apple</li>
+    <li role="option">banana</li>
+  </ul> 
+  <script>
+
+  </script>
+</body>
+</html>

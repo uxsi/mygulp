@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="./combobox-1.1.css" media="all">
+</head>
+<body>
+  <div>
+    <div id="box" role="combobox" aria-labelledby="input" aria-haspopup="listbox" aria-expanded="false" aria-owns="list">
+      <input id="input" type="text" aria-label="title" aria-autocomplete="both" aria-controls="list">
+    </div>
+    <div role="button" id="cancel">取消</button>
+  </div>
+  <ul style="display:none" role="listbox" id="list">
+    <li role="option">apple</li>
+    <li role="option">aa</li>
+    <li role="option">aab</li>
+    <li role="option">banana</li>
+  </ul> 
+
+  <script>
+    var box = document.getElementById("box")
+var input = document.getElementById("input")
+var cancel = document.getElementById("cancel")
+var list = document.getElementById("list")
+
+box.addEventListener('click',function(){
+  input.focus();
+})
+
+
+
+input.addEventListener('keyup', function(e){
+  var show = false
+  var flag = false
+  
+  Array.prototype.forEach.call(list.querySelectorAll('li'), function(li) {
+    if(input.value){
+      if(li.textContent.indexOf(input.value) === 0){
+        li.style.display = 'block'
+        show = true;
+        var txt = input.value;
+        if(e.keyCode != 8 && flag === false){
+          input.value = li.textContent;
+          flag = true;
+          input.setSelectionRange(txt.length, input.value.length);
+        }
+      }else{
+        li.style.display = 'none'
+      }
+    }
+  })
+  if(show){
+    list.style.display='block'
+  }else{
+    list.style.display='none'
+  }
+})
+
+  </script>
+</body>
+</html>
