@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>accessiblity</title>
+  <style>
+optgroup:before{
+  content:"group";
+}
+  </style>
+</head>
+<body>
+  <form action="#" method="post"  id="login1" onsubmit="return errorCheck1()">
+  <p>Note: [*]denotes mandatory field</p>
+  <p>
+    <label for="usrname">Login name: </label>
+    <input type="text" name="usrname" id="usrname" aria-required="true"/>[*]
+  </p>
+  <p>
+    <label for="pwd">Password</label>
+    <input type="password" name="pwd" id="pwd" size="12" aria-required="true" />[*]
+  </p>
+  <p>
+    <input type="submit" value="Login" id="next_btn" name="next_btn"/>
+  </p>
+</form>
+
+  <div class="text">
+<label for="first">First Name:</label>
+
+<input type="text" id="first" name="first" size="20"
+      onmouseover="tooltipShow(event, this, 'tp1');"
+      onfocus="tooltipShow(event, this, 'tp1');"
+      aria-describedby="tp1"
+      aria-required="false"/>
+
+<div id="tp1" role="tooltip" aria-hidden="true">Your first name is optional. </div>
+</div>
+
+
+  <p><span id="fontDesc">Select the font faces and sizes to be used on this page</span>
+ <button id="fontB" onclick="doAction('Fonts');" aria-describedby="fontDesc">Fonts</button>
+</p>
+<p><span id="colorDesc">Select the colors to be used on this page</span>
+ <button id="colorB" onclick="doAction('Colors');" aria-describedby="colorDesc">Colors</button>
+</p>
+<p><span id="customDesc">Customize the layout and styles used on this page</span>
+ <button id="customB" onclick="doAction('Customize');" aria-describedby="customDesc">Customize</button>
+</p>
+
+  <form>
+<label for="fname">First name</label>
+<input name="" type="text" id="fname" aria-describedby="int2">
+<p id="int2">A bit of instructions for this field linked with aria-describedby. </p>
+</form>
+  <button aria-label="Close" aria-describedby="descriptionClose"
+    onclick="myDialog.close()">X</button>
+<div id="descriptionClose">Closing this window will discard any information entered and return you back to the main page</div>
+
+  <a name="categories" id="categories"></a><h2>Product Categories</h2>
+<ul class="navigation">
+    <li><a href="kitchen.html">Kitchen</a></li>
+    <li><a href="bedbath.html">Bed &amp; Bath</a></li>
+    <li><a href="dining.html">Fine Dining</a></li>
+    <li><a href="lighting.html">Lighting</a></li>
+    <li><a href="storage.html">Storage</a><li>
+</ul>
+
+  <form action="http://example.com/prog/someprog" method="post">
+    <label for="related_techniques"><strong>Related Techniques:</strong></label>
+    <select name="related_techniques" id="related_techniques" multiple="multiple" size="10">
+  <optgroup label="General Techniques">
+    <option value="G1">G1: Adding a link at the top of each page ... </option>
+    <option value="G4">G4: Allowing the content to be paused and restarted ... </option>
+    <option value="G5">G5: Allowing users to complete an activity without any time... </option>
+    <option value="G8">G8: Creating an extended audio description for the ... </option>
+    <option value="G9">G9: Creating captions for live synchronized media... </option>
+    <option value="G10">G10: Creating components using a technology that ... </option>
+  </optgroup>
+  <optgroup label="HTML Techniques">
+    <option value="H2">H2: Combining adjacent image and text links for the same ... </option>
+    <option value="H4">H4: Creating a logical tab order through links, form ... </option>
+    <option value="H24">H24: Providing text alternatives for the area ... </option>
+  </optgroup>
+  <optgroup label="CSS Techniques">
+    <option value="C6">C6: Positioning content based on structural markup... </option>
+    <option value="C7">C7: Using CSS to hide a portion of the link text... </option>
+  </optgroup>
+  <optgroup label="SMIL Techniques">
+    <option value="SM1">SM1: Adding extended audio description in SMIL 1.0... </option>
+    <option value="SM2">SM2: Adding extended audio description in SMIL 2.0... </option>
+    <option value="SM6">SM6: Providing audio description in SMIL 1.0... </option>
+  </optgroup>
+  <optgroup label="ARIA Techniques">
+    <option value="ARIA1">ARIA1: Using WAI-ARIA describedby... </option>
+    <option value="ARIA2">ARIA2: Identifying required fields with the "required"... </option>
+    <option value="ARIA3">ARIA3: Identifying valid range information with "valuemin" ... </option>
+  </optgroup>
+  <optgroup label="Common Failures">
+    <option value="F1">F1: Failure of SC 1.3.2 due to changing the meaning of content by... </option>
+    <option value="F2">F2: Failure of SC 1.3.1 due to using changes in text presentation... </option>
+    <option value="F3">F3: Failure of SC 1.1.1 due to using CSS to include images  ... </option>
+    <option value="F4">F4: Failure of SC 2.2.2 due to using text-decoration:blink ...</option>
+  </optgroup>
+</select>
+</form>
+  <form action="http://example.com/prog/someprog" method="post">
+    <label for="food">What is your favorite food?</label>
+    <select id="food" name="food">
+      <optgroup label="Fruits">
+        <option value="1">Apples</option>
+        <option value="3">Bananas</option>
+        <option value="4">Peaches</option>
+        <option value="5">...</option>
+      </optgroup>
+      <optgroup label="Vegetables">
+        <option value="2">Carrots</option>
+        <option value="6">Cucumbers</option>
+       <option value="7">...</option>
+     </optgroup>
+     <optgroup label="Baked Goods">
+       <option value="8">Apple Pie</option>
+       <option value="9">Chocolate Cake</option>
+       <option value="10">...</option>
+     </optgroup>
+   </select>
+</form>
+
+
+  <table>
+   <tr>
+     <th rowspan="2" id="h">Homework</th>
+     <th colspan="3" id="e">Exams</th>
+     <th colspan="3" id="p">Projects</th>
+   </tr>
+   <tr>
+     <th id="e1" headers="e">1</th>
+     <th id="e2" headers="e">2</th>
+     <th id="ef" headers="e">Final</th>
+     <th id="p1" headers="p">1</th>
+     <th id="p2" headers="p">2</th>
+     <th id="pf" headers="p">Final</th>
+   </tr>
+   <tr>
+    <td headers="h">15%</td>
+    <td headers="e e1">15%</td>
+    <td headers="e e2">15%</td>
+    <td headers="e ef">20%</td>
+    <td headers="p p1">10%</td>
+    <td headers="p p2">10%</td>
+    <td headers="p pf">15%</td>
+   </tr>
+  </table>
+
+
+  <p>Helen Keller said, <q>Self-pity is our worst enemy and if we yield to it, we can never do anything good in the world.</q></p>
+
+  <a id="l1" href="#" aria-expanded="false" title="Show details" aria-controls="block1" >John Henry's Account</a><img src="images/panel_expand.gif" alt="" />
+  <div id="block1" style="display:inline" tabindex="-1" aria-labelledby="l1 cd1" role="region"><span id="cd1" role="heading" aria-level="3">Certificate of  Deposit:</span>
+    <table style="display:inline-table">
+      <tr><th scope="row">Account:</th> <td>25163522</td></tr>
+      <tr><th scope="row">Start date:</th> <td>February 1, 2014</td></tr>
+      <tr><th scope="row">Maturity date:</th><td>February 1, 2016</td></tr>
+      <tr><th scope="row">Deposit Amount:</th> <td>$ 3,000.00</td></tr>
+      <tr><th scope="row">Maturity Amount:</th> <td>$ 3,072.43</td></tr>
+    </table>
+  </div>
+
+  <input name="searchtxt" type="text" aria-labelledby="searchbtn">
+  <input name="searchbtn" id="searchbtn" type="submit" value="Search">
+
+
+  <div role="article" aria-labelledby="p123" aria-describedby="info">
+    <span style="display:inline" id="p123">Calendar</span>
+        <span style="display:inline" id="info">
+        This calendar shows the game schedule for the Boston Red Sox.
+        </span>
+  </div>
+
+  <div role="img" aria-labelledby="hdr1">
+    <h1 id="hdr1">
+      Top News Stories
+      ...
+    </h1>
+  </div>
+
+
+  <img src="./test.png">
+  <img alt="" src="./test.png">
+
+  <div style="display:none" role="img" aria-label="display none"></div>
+  <div role="img" aria-label="visibility hidden" style="visibility:hidden;">
+    test
+  </div>
+
+  <button aria-label="year" name="test"><img src="./test.png" alt="xushengni"><img src="./test.png" alt="hi"><img src="" alt=""></button>
+
+
+  <div role="img" aria-labelledby="yes star_id">
+    <img src="./test.png" aria-label="hi" alt="">
+  <div id="star_id">girls</div>
+  <div id="yes">my</div>
+  </div>
+
+  <div role="button">
+    <img src="./test.png" alt="hi">
+  </div>
+
+
+  <input type="" aria-label="test">
+
+  <label for="" aria-labelledby="xxx">xxx</label>
+  <input type="" aria-label="test">
+
+  <label for="" aria-label="xxx">xxx</label>
+  <input type="" aria-label="test">
+
+
+  <button aria-labelledby="test"><img src="" alt=""></button>
+
+  <p aria-label="my name" role="img" id="test">oh my god</p>
+
+  <a href="products.html">
+    <img src="icon.gif" alt="">
+    Products page
+  </a>
+
+  <a href="products.html">
+    <img src="icon.gif" alt="haha">
+    Products page
+  </a>
+
+  <object data="companylogo.gif" type="image/gif">
+    <p>Company Name</p>
+  </object>
+  <object classid="java:Press.class" width="500" height="500">
+    <object data="Pressure.mpeg" type="video/mpeg">
+      <object data="Pressure.gif" type="image/gif">
+        As temperature increases, the molecules in the balloon...
+      </object>
+    </object>
+  </object>
+
+  <abbr title="fright">=8-0</abbr>
+  <abbr title="Austin Rocks">Au5t1N r0xx0rz</abbr>
+
+  <img src="ladymacbeth.jpg" alt="Lady MacBeth" aria-label="p1" aria-describedby="p1">
+  <p id="p1">represents ...</p>
+
+  <a href="prod_123_feedback.htm">Feedback
+  <img src="ladymacbeth.jpg" alt="Lady MacBeth">
+  </a>
+  <p id="p2">my name</p>
+
+  <article>
+    <a href="news.html">
+      <i style="display:block">Budget</i>
+      <img class="alertimg" src="alerticon.png" alt="test" height="30" width="30">
+      Read more
+    </a>
+  </article>
+
+  <label for="searchTerm">Search for:</label>
+  <input id="searchTerm" type="text" size="30" value="" name="searchTerm">
+  <select title="Search in" id="scope"></select>
+
+  <style>
+  .before:before{content:"my girls";}
+  .after:after{content:"\0064";}
+  </style>
+  <div class="before">i love</div>
+  <div class="after" aria-label="name" role="banner">letter</div>
+
+  <p aria-label="wa ha ha">
+  <img src="" alt="picture">
+  </p>
+</body>
+</html>

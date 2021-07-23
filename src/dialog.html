@@ -11,6 +11,7 @@
   </style>
 </head>
 <body>
+
   <a href="javascript:;" id="btn">弹窗</a>
   <div id="dialog" role="dialog" aria-modal="true" class="dialog_wrp" style="display:none;">
     <div class="mask"></div>
@@ -34,5 +35,30 @@
       btn.focus();
 		},false)
   </script>
+
+
+  <button id="showDialog" type="button">弹窗</button>
+  <p>Amet minima odio ut fugiat consequatur. Ab explicabo neque et</p>
+  <div id="js_dialog_wrp" role="dialog" aria-modal="true" class="dialog_wrp" style="display:none;">
+    <div class="mask"></div>
+    <div class="dialog">
+      <strong class="dialog_title" id="js_dialog_title">标题</strong>
+      <p class="dialog_desc">描述内容</p>
+    </div>
+  </div>
+  <script src="https://zeptojs.com/zepto.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      var $dialogWrp = $('#js_dialog_wrp');
+      var $dialogTitle = $('#js_dialog_title');
+
+      $('#showDialog').on('click', function(){
+        $dialogWrp.css('display','block');
+        $dialogTitle.attr('tabindex','0');
+        $dialogTitle.trigger('focus');
+      });
+    });
+  </script>
+
 </body>
 </html>
