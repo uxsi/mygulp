@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <style>
+  p {
+  color: gray;
+}
+
+@media (inverted-colors: inverted) {
+  
+  p {
+    font-size:40px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  p {
+    font-size:20px;
+    color:red;
+  }
+}
+  </style>
+  <p>If you're using inverted colors, this text should be blue on white (the inverse of yellow on black). If you're not, it should be red on light gray.</p>
+<p>If the text is gray, your browser doesn't support the `inverted-colors` media feature.</p>
+</body>
+</html>
