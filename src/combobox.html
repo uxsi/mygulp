@@ -6,59 +6,100 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="./combobox-1.1.css" media="all">
+  <script src="./utils.js"></script>
+  <script src="./listbox-combobox.js"></script>
+  <script src="./listbox-combo-example.js"></script>
 </head>
 <body>
-  <div>
-    <div id="box" role="combobox" aria-labelledby="input" aria-haspopup="listbox" aria-expanded="false" aria-owns="list">
-      <input id="input" type="text" aria-label="title" aria-autocomplete="both" aria-controls="list">
+
+  <label id="ex3-label" class="combobox-label">
+  Choice 3 Fruit or Vegetable
+</label>
+<div class="combobox-wrapper">
+  <div role="combobox"
+       aria-expanded="false"
+       aria-owns="ex3-listbox"
+       aria-haspopup="listbox"
+       id="ex3-combobox">
+    <input type="text"
+           aria-autocomplete="both"
+           aria-controls="ex3-listbox"
+           aria-labelledby="ex3-label"
+           id="ex3-input">
+    <div class="combobox-dropdown"
+         id="ex3-combobox-arrow"
+         tabindex="-1"
+         role="button"
+         aria-label="Show vegetable options">
+      <img src="imgs/arrow_drop_down_grey_27x27.png" alt="">
     </div>
-    <div role="button" id="cancel">取消</button>
+  </div>
+  <ul aria-labelledby="ex3-label"
+      role="listbox"
+      id="ex3-listbox"
+      class="listbox hidden">
+  </ul>
+</div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <label for="ex1-input"
+    id="ex1-label"
+    class="combobox-label">
+    Choice 1 Fruit or Vegetable
+  </label>
+  <div class="combobox-wrapper">
+    <div role="combobox"
+      aria-expanded="false"
+      aria-owns="ex1-listbox"
+      aria-haspopup="listbox"
+      id="ex1-combobox">
+      <input type="text"
+      aria-autocomplete="list"
+      aria-controls="ex1-listbox"
+      id="ex1-input">
+    </div>
+    <ul aria-labelledby="ex1-label"
+      role="listbox"
+      id="ex1-listbox"
+      class="listbox hidden">
+    </ul>
+  </div>
+
+  <label id="ex2-label" class="combobox-label">
+    Choice 2 Fruit or Vegetable
+  </label>
+  <div class="combobox-wrapper">
+    <div role="combobox"
+      aria-expanded="false"
+      aria-owns="ex2-listbox"
+      aria-haspopup="listbox"
+      id="ex2-combobox">
+      <input type="text"
+      aria-autocomplete="both"
+      aria-controls="ex2-listbox"
+      aria-labelledby="ex2-label"
+      id="ex2-input">
+    </div>
+    <ul aria-labelledby="ex2-label"
+      role="listbox"
+      id="ex2-listbox"
+      class="listbox hidden">
+    </ul>
+  </div>
+
+  <div id="box" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list">
+    <input id="input" type="text" aria-autocomplete="both" aria-controls="list">
+    <div role="button" tabindex="-1">搜索</button>
   </div>
   <ul style="display:none" role="listbox" id="list">
     <li role="option">apple</li>
-    <li role="option">aa</li>
-    <li role="option">aab</li>
     <li role="option">banana</li>
   </ul> 
-
   <script>
-    var box = document.getElementById("box")
-var input = document.getElementById("input")
-var cancel = document.getElementById("cancel")
-var list = document.getElementById("list")
-
-box.addEventListener('click',function(){
-  input.focus();
-})
-
-
-
-input.addEventListener('keyup', function(e){
-  var show = false
-  var flag = false
-  
-  Array.prototype.forEach.call(list.querySelectorAll('li'), function(li) {
-    if(input.value){
-      if(li.textContent.indexOf(input.value) === 0){
-        li.style.display = 'block'
-        show = true;
-        var txt = input.value;
-        if(e.keyCode != 8 && flag === false){
-          input.value = li.textContent;
-          flag = true;
-          input.setSelectionRange(txt.length, input.value.length);
-        }
-      }else{
-        li.style.display = 'none'
-      }
-    }
-  })
-  if(show){
-    list.style.display='block'
-  }else{
-    list.style.display='none'
-  }
-})
 
   </script>
 </body>
