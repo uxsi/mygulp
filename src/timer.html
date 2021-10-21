@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <div role="button" aria-live="polite">
+    <span id="clock">60</span>
+    <span>
+      秒
+    </span>
+  </div>
+
+  <script type="text/javascript">
+    var timeClock;
+    var clock = document.getElementById("clock");
+    function sendCode() {
+      var timer_num = 60;
+      timeClock = setInterval(function(){
+        timer_num--;
+        clock.innerHTML = timer_num;
+        if (timer_num == 0) {
+          clearInterval(timeClock);
+          clock.innerHTML = 60;
+        } 
+      },1000)
+    }
+    sendCode();
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>测试无障碍识别</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+
+  <div>
+    <p>原生标签</p>
+    <button id="btn1_1" title="关闭">你好</button>
+    <button id="btn1_2" title="关闭">你好<span>哈喽</span></button>
+    <button id="btn1_3" aria-label="今天" title="关闭">你好</button>
+    <button id="btn1_4" aria-labelledby="txt1" title="关闭">你好</button>
+    <button id="btn1_5" aria-labelledby="txt2" title="关闭">你好</button>
+  </div>
+
+  <div>
+    <p>button role</p>
+    <div role="button" id="btn2_1" title="关闭">你好</div>
+    <div role="button" id="btn2_2" title="关闭">你好<span>哈喽</span></div>
+    <div role="button" id="btn2_3" aria-label="今天" title="关闭">你好</div>
+    <div role="button" id="btn2_4" aria-labelledby="txt1" title="关闭">你好</div>
+    <div role="button" id="btn2_5" aria-labelledby="txt2" title="关闭">你好</div>
+  </div>
+
+  <div>
+    <p>option role</p>
+    <div role="option" id="op1_1" title="关闭">你好</div>
+    <div role="option" id="op1_2" title="关闭">你好<span>哈喽</span></div>
+    <div role="option" id="op1_3" aria-label="今天" title="关闭">你好</div>
+    <div role="option" id="op1_4" aria-labelledby="txt1" title="关闭">你好</div>
+    <div role="option" id="op1_5" aria-labelledby="txt2" title="关闭">你好</div>
+  </div>
+
+  <span id="txt1">昨天</span>
+  <span id="txt2" aria-hidden="true">明天</span>
+</body>
+</html>

@@ -6,18 +6,32 @@
   <meta name="color-scheme" content="light dark">
   <title></title>
   <style>
-    .mask{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,3);}
-    .dialog{position:fixed;bottom:0;z-index:1;left:0;right:0;height:300px;} 
+    .mask{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0);}
+    .dialog{position:fixed;bottom:0;z-index:1;left:0;right:0;height:300px;background:rgba(0,0,0);} 
+    #btn{display:inline-block;}
+    .icon{width:44px;height:44px;border:2px solid;text-indent:-9999em;display:block;}
   </style>
 </head>
 <body>
 
-  <a href="javascript:;" id="btn">弹窗</a>
+  <a href="javascript:;" id="btn">
+    <span class="icon">
+      弹窗
+    </span>
+  </a>
   <div id="dialog" role="dialog" aria-modal="true" class="dialog_wrp" style="display:none;">
     <div class="mask"></div>
     <div class="dialog">
-      <strong class="dialog_title" id="title">标题</strong>
+      <strong class="dialog_title" id="title">2</strong>
+      <button id="show">弹窗2</button>
       <button id="close" type="button">关闭</button>
+    </div>
+  </div>
+  <div id="dialog2" role="alertdialog" class="dialog_wrp" style="display:none;">
+    <div class="mask"></div>
+    <div class="dialog">
+      <strong class="dialog_title">标题</strong>
+      <button id="close2" type="button">关闭</button>
     </div>
   </div>
   <script type="text/javascript">
@@ -25,18 +39,24 @@
     var close = document.getElementById("close");
     var dialog = document.getElementById("dialog");
     var title = document.getElementById("title");
+    var show = document.getElementById("show");
+    var close2 = document.getElementById("close2");
+    var dialog2 = document.getElementById("dialog2");
+
 		btn.addEventListener('click',function(){
       dialog.style.display="block";
-      close.setAttribute('tabindex','0');
-      close.focus();
+      show.setAttribute('tabindex','-1');
+      show.focus();
 		},false)
 		close.addEventListener('click',function(){
       dialog.style.display="none";
       btn.focus();
 		},false)
+
   </script>
 
 
+  <!--
   <button id="showDialog" type="button">弹窗</button>
   <p>Amet minima odio ut fugiat consequatur. Ab explicabo neque et</p>
   <div id="js_dialog_wrp" role="dialog" aria-modal="true" class="dialog_wrp" style="display:none;">
@@ -46,6 +66,7 @@
       <p class="dialog_desc">描述内容</p>
     </div>
   </div>
+  -->
   <script src="https://zeptojs.com/zepto.min.js"></script>
   <script type="text/javascript">
     $(function(){

@@ -27,7 +27,7 @@ gulp.task('build',function(){
     },
     files: '**',
     open: false,
-    //https: true,
+    https: true,
     port: 4455
   });
 });

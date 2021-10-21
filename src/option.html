@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>测试option的aria label属性</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+</head>
+<body>
+  <input type="password" role="">
+  <div role="password">哈喽</div>
+
+<div>role option & aria-labelledby</div>
+<div id="lbl_txt1" aria-labelledby="lbl_txt1 lbl_txt2" role="option">
+  <span>
+    你好
+  </span>
+</div>
+<span id="lbl_txt2">
+  关闭
+</span>
+
+<div>no role & aria-labelledby</div>
+<div id="lbl_txt1" aria-labelledby="lbl_txt1 lbl_txt2">
+  <span aria-hidden="true">
+    你好
+  </span>
+</div>
+<span aria-hidden="true">
+  <span id="lbl_txt2">
+  关闭
+  </span>
+</span>
+</body>
+</html>

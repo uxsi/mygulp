@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+</head>
+<body>
+  <div role="link" id="link">hi</div>
+  <a href="#" id="link2">我们</a>
+  <div role="alert" aria-live="assertive" id="alert" style="display:none;">通知</div>
+  <script type="text/javascript">
+    var link = document.getElementById("link");
+    var link2 = document.getElementById("link2");
+    var js_alert = document.getElementById("alert");
+		link.addEventListener('click',function(){
+      this.innerHTML = '关闭';
+      js_alert.style.display = 'block';
+      setTimeout(function(){
+        link2.focus();
+      },1000)
+		},false)
+		link2.addEventListener('click',function(){
+      this.innerHTML = '你好';
+		},false)
+
+  </script>
+</body>
+</html>
