@@ -1,0 +1,92 @@
+.weui-desktop-steps {
+	background-color:#fff;
+	border-bottom:1px solid #e4e8eb;
+	text-align:center;
+	line-height:60px;
+	box-sizing:border-box;
+	counter-reset:step;
+	color:#9a9a9a;
+	font-size:14px
+}
+.weui-desktop-step,.weui-desktop-step:before {
+	display:inline-block;
+	vertical-align:middle
+}
+.weui-desktop-step:before {
+	counter-increment:step;
+	content:counter(step);
+	margin:-.2em 6px 0 0;
+	width:16px;
+	height:16px;
+	line-height:16px;
+	border:1px solid;
+	border-radius:50%
+}
+.weui-desktop-step:after {
+	content:"";
+	display:inline-block;
+	vertical-align:middle;
+	margin:10px;
+	width:30px;
+	border-bottom:2px solid #e4e8eb
+}
+.weui-desktop-step:last-child:after {
+	display:none
+}
+.weui-desktop-step.current {
+	color:#07c160
+}
+.weui-desktop-step__panel {
+	height:300px;
+	overflow-y:auto
+}
+.weui-desktop-steps_vertical {
+	text-align:left;
+	border-bottom:none
+}
+.weui-desktop-steps_vertical .weui-desktop-step {
+	overflow:hidden;
+	min-height:50px;
+	display:block
+}
+.weui-desktop-steps_vertical .weui-desktop-step:before {
+	text-align:center
+}
+.weui-desktop-steps_vertical .weui-desktop-step:after {
+	display:block;
+	border-right:2px solid #e4e8eb;
+	height:30px;
+	width:0;
+	margin:0 9px
+}
+.weui-desktop-steps_vertical .weui-desktop-step:last-child:after {
+	display:none
+}
+.weui-desktop-step {
+	position:relative
+}
+.weui-desktop-step:before {
+	vertical-align:top;
+	margin-top:0
+}
+.weui-desktop-step:after {
+	margin:8px 10px
+}
+.weui-desktop-step__title {
+	display:inline-block;
+	vertical-align:top;
+	line-height:1.4
+}
+.weui-desktop-steps_vertical .weui-desktop-step:after {
+	position:absolute;
+	top:55px;
+	height:100%
+}
+.weui-desktop-steps {
+	line-height:1.4
+}
+.weui-desktop-step {
+	vertical-align:top;
+	padding:21px 0
+}
+

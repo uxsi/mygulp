@@ -1,0 +1,205 @@
+:root {
+	--weuiDesktop_themeColor:#07c160;
+	--weuiDesktop_errorColor:#fa5151;
+	--weuiDesktop_warningColor:#ffc300;
+	--weuiDesktop_neutralColor:#10aeff;
+	--weuiDesktop_linkColor:#576b95;
+	--weuiDesktop_globalColor:#1a1b1c;
+	--weuiDesktop_focusColor:#4c4d4e;
+	--weuiDesktop_descColor:#7e8081;
+	--weuiDesktop_subColor:#b1b2b3;
+	--weuiDesktop_separateColor:#e3e4e5;
+	--weuiDesktop_globalBgColor:#f6f7f8;
+	--weuiDesktop_areaBgColor:#f6f7f8;
+	--weuiDesktop_cardBgColor:#fff;
+	--weuiDesktop_successColor:#07c160;
+	--weuiDesktop_maskColor_hover:rgba(0,0,0,0.05);
+	--weuiDesktop_maskDeepColor_hover:rgba(0,0,0,0.1);
+	--weuiDesktop_maskLightColor_hover:rgba(0,0,0,0.02);
+	--weuiDesktop_maskMiddleColor_hover:rgba(0,0,0,0.03);
+	--weuiDesktop_FG_Text_globalColor:var(--weuiDesktop_globalColor);
+	--weuiDesktop_FG_Text_globalColor_disabled:rgba(0,0,0,0.2);
+	--weuiDesktop_FG_Text_descColor:var(--weuiDesktop_descColor);
+	--weuiDesktop_FG_Text_subColor:var(--weuiDesktop_subColor);
+	--weuiDesktop_FG_Text_lightColor:var(--weuiDesktop_cardBgColor);
+	--weuiDesktop_FG_Text_lightColor_disabled:hsla(0,0%,100%,0.5);
+	--weuiDesktop_FG_Text_EmColor:var(--weuiDesktop_themeColor);
+	--weuiDesktop_FG_Text_errorColor:var(--weuiDesktop_errorColor);
+	--weuiDesktop_FG_Text_errorColor_disabled:rgba(250,81,81,0.5);
+	--weuiDesktop_FG_Text_warningColor:var(--weuiDesktop_warningColor);
+	--weuiDesktop_FG_Text_linkColor:var(--weuiDesktop_linkColor);
+	--weuiDesktop_FG_Icon_descColor:var(--weuiDesktop_descColor);
+	--weuiDesktop_FG_Icon_subColor:var(--weuiDesktop_subColor);
+	--weuiDesktop_FG_Icon_lightColor:var(--weuiDesktop_cardBgColor);
+	--weuiDesktop_FG_Icon_emColor:var(--weuiDesktop_themeColor);
+	--weuiDesktop_FG_Icon_ErrorColor:var(--weuiDesktop_errorColor);
+	--weuiDesktop_FG_Icon_WarningColor:var(--weuiDesktop_warningColor);
+	--weuiDesktop_FG_Icon_linkColor:var(--weuiDesktop_linkColor);
+	--weuiDesktop_FG_Icon_infoColor:var(--weuiDesktop_neutralColor);
+	--weuiDesktop_BG_globalBgColor:var(--weuiDesktop_globalBgColor);
+	--weuiDesktop_BG_containerBgColor:var(--weuiDesktop_cardBgColor);
+	--weuiDesktop_BG_subBgColor:var(--weuiDesktop_areaBgColor);
+	--weuiDesktop_BG_emBgColor:var(--weuiDesktop_themeColor);
+	--weuiDesktop_BG_Selection_emBgColor:rgba(7,193,96,0.1);
+	--weuiDesktop_BG_ErrorBgColor:var(--weuiDesktop_errorColor);
+	--weuiDesktop_BG_WarningBgColor:var(--weuiDesktop_warningColor);
+	--weuiDesktop_BG_maskBgColor:rgba(0,0,0,0.5);
+	--weuiDesktop_BG_lightMaskColor:hsla(0,0%,100%,0.96);
+	--weuiDesktop_FG_Icon_infoBgColor:var(--weuiDesktop_neutralColor);
+	--weuiDesktop_lineColor:var(--weuiDesktop_separateColor);
+	--weuiDesktop_emlineColor:var(--weuiDesktop_globalColor);
+	--weuiDesktop_mediumFontWeight:500;
+	--weuiDesktop_globalFontSize:14px;
+	--weuiDesktop_H1FontSize:24px;
+	--weuiDesktop_H2FontSize:20px;
+	--weuiDesktop_H3FontSize:16px;
+	--weuiDesktop_contentFontSize:17px;
+	--weuiDesktop_descFontSize:12px;
+	--weuiDesktop_globalLineHeight:1.6;
+	--weuiDesktop_articleLineHeight:1.6;
+	--weuiDesktop_lowShadow:0px 1px 4px rgba(0,0,0,0.2);
+	--weuiDesktop_highShadow:0px 2px 8px rgba(0,0,0,0.13);
+	--weuiDesktop_largeGapLayout:1352px;
+	--weuiDesktop_mediumGapLayout:1560px;
+	--weuiDesktop_smallBorderRadius:4px;
+	--weuiDesktop_minBorderRadius:2px;
+	--weuiDesktop_mediumBorderRadius:8px;
+	--weuiDesktop_fontFamily:-apple-system,system-ui,BlinkMacSystemFont,PingFang SC,SF Pro Text,Helvetica Neue,Helvetica,Hiragino Sans GB,Heiti SC,Arial,Microsoft YaHei UI,Microsoft YaHei,sans-serif;
+	--weuiDesktop_menuWidth:288px;
+	--weuiDesktopBtnPrimaryColor:#fff;
+	--weuiDesktopBtnPrimaryBackgroundColorHL:#f25c42;
+	--weuiDesktopBtnPrimaryBorderColorHL:#f25c42;
+	--weuiDesktopBtnPrimaryColorHL:hsla(0,0%,100%,0.8);
+	--weuiDesktopBtnDefaultBackgroundColor:rgba(0,0,0,0.03);
+	--weuiDesktopBtnDefaultBorderColor:#e4e8eb;
+	--weuiDesktopBtnDefaultColor:#ff6146;
+	--weuiDesktopBtnDefaultBackgroundColorHL:#eaeaea;
+	--weuiDesktopBtnDefaultBorderColorHL:#eaeaea;
+	--weuiDesktopBtnDefaultColorHL:#f25c42;
+	--weuiDesktopTitleTabBorderColor:#e0e1e2;
+	--weuiDesktopTitleTabHoverBorderColor:#a0a3ab;
+	--weuiDesktopSectionTabBorderColor:#c9cace;
+	--weuiDesktopSectionTabCurrentBackgroundColor:#07c160;
+	--weuiDesktopSectionTabCurrentBorderColor:#07c160;
+	--weuiDesktopSectionTabCurrentColor:#fff;
+	--slider-color:#07c160;
+	--weuiDesktopTableBorderColor:#e3e4e5;
+	--weuiDesktopTableHeadColor:#7e8081;
+	--weuiDesktopTableHeadBackgroundColor:#f6f7f8
+}
+.weui-desktop-steps {
+	background-color:#fff;
+	border-bottom:1px solid var(--weuiDesktop_lineColor);
+	text-align:center;
+	line-height:60px;
+	box-sizing:border-box;
+	counter-reset:step;
+	color:var(--weuiDesktop_FG_Text_subColor);
+	font-size:var(--weuiDesktop_globalFontSize)
+}
+.weui-desktop-step,.weui-desktop-step:before {
+	display:inline-block;
+	vertical-align:middle
+}
+.weui-desktop-step:before {
+	counter-increment:step;
+	content:counter(step);
+	margin:-.2em 6px 0 0;
+	width:16px;
+	height:16px;
+	line-height:16px;
+	border:1px solid;
+	border-radius:50%
+}
+.weui-desktop-step:after {
+	content:"";
+	display:inline-block;
+	vertical-align:middle;
+	margin:10px;
+	width:30px;
+	border-bottom:2px solid var(--weuiDesktop_lineColor)
+}
+.weui-desktop-step:last-child:after {
+	display:none
+}
+.weui-desktop-step.current,.weui-desktop-step.finish {
+	color:var(--weuiDesktop_FG_Text_EmColor)
+}
+.weui-desktop-step.weui-desktop-step__can-skip .weui-desktop-step__inner {
+	cursor:pointer
+}
+.weui-desktop-step__inner {
+	display:inline-block
+}
+.weui-desktop-steps_vertical .weui-desktop-step.weui-desktop-step__extend {
+	display:flex;
+	justify-content:flex-start;
+	align-items:flex-start
+}
+.weui-desktop-step__content {
+	flex:1
+}
+.weui-desktop-step__panel {
+	height:300px;
+	overflow-y:auto
+}
+.weui-desktop-steps_has-finish .weui-desktop-step.current:before {
+	background-color:var(--weuiDesktop_themeColor);
+	color:var(--weuiDesktop_FG_Text_lightColor)
+}
+.weui-desktop-steps_has-finish .weui-desktop-step.finish:after {
+	border-bottom:2px solid var(--weuiDesktop_themeColor)
+}
+.weui-desktop-steps_vertical {
+	text-align:left;
+	border-bottom:none
+}
+.weui-desktop-steps_vertical .weui-desktop-step {
+	overflow:hidden;
+	min-height:50px;
+	display:block
+}
+.weui-desktop-steps_vertical .weui-desktop-step:before {
+	text-align:center
+}
+.weui-desktop-steps_vertical .weui-desktop-step:after {
+	display:block;
+	border-right:2px solid var(--weuiDesktop_lineColor);
+	height:30px;
+	width:0;
+	margin:0 9px
+}
+.weui-desktop-steps_vertical .weui-desktop-step:last-child:after {
+	display:none
+}
+.weui-desktop-step {
+	position:relative
+}
+.weui-desktop-step:before {
+	vertical-align:top;
+	margin-top:0
+}
+.weui-desktop-step:after {
+	margin:8px 10px
+}
+.weui-desktop-step__title {
+	display:inline-block;
+	vertical-align:top;
+	line-height:1.4
+}
+.weui-desktop-steps_vertical {
+	background-color:transparent
+}
+.weui-desktop-steps_vertical .weui-desktop-step:after {
+	position:absolute;
+	top:55px;
+	height:100%
+}
+.weui-desktop-steps {
+	line-height:1.4
+}
+.weui-desktop-step {
+	vertical-align:top;
+	padding:21px 0
+}
+
