@@ -1,23 +1,25 @@
 
-.ellipsis_text{
+.weui-oneline-ellipsis{
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
 }
+.weui-oneline-ellipsis__wrp{
+  display:flex;
 
-.ellipsis_text_multi{
+  .weui-oneline-ellipsis{
+    min-width:0;
+  }
+
+  .weui-oneline-ellipsis__extra{
+    flex-shrink:0;
+  }
+}
+
+.weui-multi-ellipsis{
   display:-webkit-box;
   -webkit-box-orient:vertical;
   -webkit-line-clamp:2;
   overflow:hidden;
 }
 
-.ellipsis_text_wrp{
-  display:flex;
-  .ellipsis_text{
-    min-width:0;
-  }
-  .ellipsis_extra{
-    flex-shrink:0;
-  }
-}
