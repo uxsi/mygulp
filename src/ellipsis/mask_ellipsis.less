@@ -1,22 +1,40 @@
 :root{
   --ellipsisLine:2;
   --ellipsisFontSize:1rem;
+  --ellipsisColor:rgba(0,0,0,.9);
+}
+
+@media(prefers-color-scheme:dark){
+  :root{
+    --ellipsisColor:rgba(255,255,255,.8);
+  }
 }
 
 .weui-mask-ellipsis__wrp{
   line-height:1.4;
   font-size:var(--ellipsisFontSize);
+  color:var(--ellipsisColor);
   height:calc(var(--ellipsisLine) * 1.4em);//默认最大行数为2行
   overflow:hidden;//这个hidden是为了截断.weui-mask-ellipsis的200%宽度
+}
+.weui-mask-ellipsis{
+  width:200%;
+}
+.weui-mask-ellipsis__text,
+.weui-mask-ellipsis__placeholder,
+.weui-mask-ellipsis__extra{
+  float:left;
 }
 .weui-mask-ellipsis__placeholder{
   width:50%;
   height:calc(var(--ellipsisLine) * 1.4em + .1em);//默认最大行数为2行，加.1em是规避text高度取整带来差异
 }
-.weui-mask-ellipsis{width:200%;}
-.weui-mask-ellipsis__text,.weui-mask-ellipsis__placeholder,.weui-mask-ellipsis__extra{float:left;}
-.weui-mask-ellipsis__text{width:50%;}
-.weui-mask-ellipsis__extra{transform:translate(-100%,calc(-100% - .1em));}//.1em是因为placeholder加高了.1em
+.weui-mask-ellipsis__text{
+  width:50%;
+}
+.weui-mask-ellipsis__extra{
+  transform:translate(-100%,calc(-100% - .1em));//.1em是因为placeholder加高了.1em
+}
 
 // 渐变遮罩
 .weui-mask-ellipsis__extra{

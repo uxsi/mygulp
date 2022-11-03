@@ -1,6 +1,13 @@
-body{
+:root{
   --ellipsisLine:2;
   --ellipsisFontSize:1rem;
+  --ellipsisColor:rgba(0,0,0,.9);
+}
+
+@media(prefers-color-scheme:dark){
+  :root{
+    --ellipsisColor:rgba(255,255,255,.8);
+  }
 }
 .weui-ellipsis{
   overflow:hidden;
@@ -11,11 +18,10 @@ body{
 
   line-height:1.4;
   font-size:var(--ellipsisFontSize);
+  color:var(--ellipsisColor);
   text-align:justify;
 }
-.weui-ellipsis__text__wrp{
-  display:inline;
-}
+.weui-ellipsis__text__wrp,
 .weui-ellipsis__text{
   display:inline;
 }

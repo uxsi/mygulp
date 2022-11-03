@@ -1,14 +1,22 @@
 :root{
   --ellipsisLine:2;
   --ellipsisFontSize:1rem;
+  --ellipsisColor:rgba(0,0,0,.9);
+}
+
+@media(prefers-color-scheme:dark){
+  :root{
+    --ellipsisColor:rgba(255,255,255,.8);
+  }
 }
 
 .weui-custom-ellipsis__wrp {
   position: relative;
+  color:var(--ellipsisColor);
+  font-size:var(--ellipsisFontSize);
+  line-height: 1.4;
   max-height:calc(var(--ellipsisLine) * 1.4em);
   overflow:hidden;
-
-  line-height: 1.4;
   text-align:justify;
 }
 .weui-custom-ellipsis__text {
@@ -22,13 +30,15 @@
   line-height: 0;
   color:transparent;
 }
-.weui-custom-ellipsis__text_inner {
+.weui-custom-ellipsis__text__inner ,
+.weui-custom-ellipsis__text__extra {
   display:inline;
-  vertical-align:bottom;
-
+  vertical-align:top;
+}
+.weui-custom-ellipsis__text__inner {
   font-size:var(--ellipsisFontSize);
   line-height:1.4;
-  color:initial;
+  color:var(--ellipsisColor);
 }
 .weui-custom-ellipsis {
   position: absolute;

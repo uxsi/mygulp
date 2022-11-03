@@ -1,7 +1,24 @@
+:root{
+  --LINK:#576b95;
+  --FG-1:rgba(0,0,0,.55);
+}
+
+
+// reset
 *{
   margin:0;
   padding:0;
 }
+body{
+  font-family: system-ui,-apple-system,Helvetica Neue,sans-serif;
+  line-height:1.6;
+}
+a{
+  color:var(--LINK);
+}
+
+
+// demo
 .demo{
   max-width:500px;
   margin:40px 20px;
@@ -29,17 +46,9 @@
   font-size:14px;
   margin-top:-4px;
   margin-bottom:8px;
-  opacity:.55;
+  color:var(--FG-1);
 }
 
-@media(prefers-color-scheme:dark){
-  body{
-    background:rgb(25,25,25);
-  }
-  .weui-mask-ellipsis__extra{
-    background: linear-gradient(to right, rgba(25,25,25,0), rgba(25,25,25,1) 40%);
-  }
-}
 
 .float{
   .b,.c{float:right;width:50px;}
@@ -60,21 +69,46 @@
   overflow:hidden;
   text-overflow:ellipsis;
 }
-.ellipsis_demo_multi{
+.multi_ellipsis_demo{
+}
+.multi_ellipsis_demo_text_wrp{
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow:hidden;
   text-overflow:ellipsis;
 }
-.ellipsis_demo_inner{
+.multi_ellipsis_demo_text{
   display:inline;
-  vertical-align:bottom;
+  vertical-align:top;
   line-height:1.4;
   font-size:1rem;
-  color:initial;
 }
-.ellipsis_hide{
-  font-size:50px;
-  line-height:0;
+.multi_ellipsis_move{
+  .multi_ellipsis_demo_text_wrp{
+    font-size:100px;
+    line-height:0;
+  }
 }
+.multi_ellipsis_hide{
+  max-height:2.8em;
+  overflow:hidden;
+}
+
+
+@media(prefers-color-scheme:dark){
+  :root{
+    --LINK:#7d90a9;
+    --FG-1:rgba(255,255,255,.55);
+  }
+
+
+  body{
+    background:rgb(25,25,25);
+  }
+  .weui-mask-ellipsis__extra{
+    background: linear-gradient(to right, rgba(25,25,25,0), rgba(25,25,25,1) 40%);
+  }
+}
+
+
