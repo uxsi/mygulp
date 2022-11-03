@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    .weui-ellipsis__wrp{
+      width:750px;
+      display:block;
+      line-height:1.4;
+      text-align:justify;
+    }
+    .weui-ellipsis{
+      display:inline-block;
+      vertical-align:top;
+    }
+    .weui-ellipsis__inner{
+      overflow:hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-overflow:ellipsis;
+    }
+    .weui-ellipsis__text__wrp{
+      display:inline;
+    }
+    .weui-ellipsis__text{
+      display:inline;
+    }
+    .weui-ellipsis__placeholder{
+      width:0;
+      float:right;
+      height:1.4em;
+      display:none;
+    }
+    .weui-ellipsis__extra{
+      float:right;
+      clear:both;
+    }
+
+    /* 
+       - 判断weui-ellipsis__text__wrp的高度是否大于weui-ellipsis的高度，是的话往weui-ellipsis加weui-ellipsis_multi
+       - 由于取整可能会存在小数点误差，所以这个高度差不能用0判断，要用是否大于1判断
+     */
+    .weui-ellipsis_multi .weui-ellipsis__placeholder {
+      display:block;
+    }
+  </style>
+</head>
+<body>
+  <div class="weui-ellipsis__wrp">
+    <div class="weui-ellipsis">
+      <div class="weui-ellipsis__inner">
+        <div class="weui-ellipsis__text__wrp">
+          <span class="weui-ellipsis__placeholder"></span>
+          <span class="weui-ellipsis__extra"><span>标签</span></span>
+          <span class="weui-ellipsis__text">
+            未超过两行带标签样式&nbsp;&nbsp;&nbsp;&nbsp;评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="weui-ellipsis__wrp">
+    <div class="weui-ellipsis weui-ellipsis_multi">
+      <div class="weui-ellipsis__inner">
+        <div class="weui-ellipsis__text__wrp">
+          <span class="weui-ellipsis__placeholder"></span>
+          <span class="weui-ellipsis__extra"><span>标签</span></span>
+          <span class="weui-ellipsis__text">
+            超过两行省略号后带标签样式&nbsp;&nbsp;&nbsp;&nbsp;网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</body>
+</html>

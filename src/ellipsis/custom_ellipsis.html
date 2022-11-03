@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="./custom_ellipsis.css">
+  <link rel="stylesheet" href="./demo.css">
+</head>
+<body>
+  <div class="demo">
+    <div class="demo_title">模拟省略号</div>
+    <div class="demo_desc">
+      <p>优点省略号左右间距可定制、不需要js判断多行，缺点是代码成本高</p>
+      <p>移动端缩放字号时会出现小数点，所以在某些档位下可能会出现省略号或者省略号后的内容偏移1px，如果要追求1px还原可以细调weui-custom-ellipsis__text的font-size参数或者weui-custom-ellipsis__extra的位置</p>
+      <p>css变量--ellipsisFontSize: 字号</p>
+      <p>css变量--ellipsisLine: 最大行数</p>
+      <p>原理见：<a href="./demo.html">原理B</a> 和 <a href="./demo.html">原理C</a> </p>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo_title">A1 模拟省略号后带内容</div>
+    <div class="demo_desc">未超过最大行数</div>
+    <div class="weui-custom-ellipsis__wrp">
+      <div class="weui-custom-ellipsis__text">
+        <div class="weui-custom-ellipsis__text_inner">
+          网络社交平台已经成为人与人之间一张重要的“关系网”。
+          <span>标签</span>
+        </div>
+      </div>
+      <div class="weui-custom-ellipsis">
+        <div class="weui-custom-ellipsis__fake-text">
+          <div class="weui-custom-ellipsis__text_inner">
+            网络社交平台已经成为人与人之间一张重要的“关系网”。
+            <span>标签</span>
+          </div>
+        </div>
+        <div class="weui-custom-ellipsis__placeholder"></div>
+        <div class="weui-custom-ellipsis__extra">
+          <span class="weui-custom-ellipsis__symbol">...</span>
+          <span>标签</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo">
+    <div class="demo_title">A2 模拟省略号后带内容</div>
+    <div class="demo_desc">超过最大行数</div>
+    <div class="weui-custom-ellipsis__wrp">
+      <div class="weui-custom-ellipsis__text">
+        <div class="weui-custom-ellipsis__text_inner">
+          网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+          <span>标签</span>
+        </div>
+      </div>
+      <div class="weui-custom-ellipsis">
+        <div class="weui-custom-ellipsis__fake-text">
+          <div class="weui-custom-ellipsis__text_inner">
+            网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+            <span>标签</span>
+          </div>
+        </div>
+        <div class="weui-custom-ellipsis__placeholder"></div>
+        <div class="weui-custom-ellipsis__extra">
+          <span class="weui-custom-ellipsis__symbol">...</span>
+          <span>标签</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo">
+    <div class="demo_title">B1 模拟省略号后带展开</div>
+    <div class="demo_desc">收起状态</div>
+    <div class="weui-custom-ellipsis__wrp">
+      <div class="weui-custom-ellipsis__text">
+        <div class="weui-custom-ellipsis__text_inner">
+          网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+        </div>
+      </div>
+      <div class="weui-custom-ellipsis">
+        <div class="weui-custom-ellipsis__fake-text">
+          <div class="weui-custom-ellipsis__text_inner">
+            网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+          </div>
+        </div>
+        <div class="weui-custom-ellipsis__placeholder"></div>
+        <div class="weui-custom-ellipsis__extra">
+          <span class="weui-custom-ellipsis__symbol">...</span>
+          <span>展开</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo">
+    <div class="demo_title">B2 模拟省略号后带展开</div>
+    <div class="demo_desc">
+      <p>展开状态</p>
+      <p>展开加weui-custom-ellipsis_unfold</p>
+    </div>
+    <div class="weui-custom-ellipsis__wrp weui-custom-ellipsis_unfold">
+      <div class="weui-custom-ellipsis__text">
+        <div class="weui-custom-ellipsis__text_inner">
+          网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+        </div>
+      </div>
+      <div class="weui-custom-ellipsis">
+        <div class="weui-custom-ellipsis__fake-text">
+          <div class="weui-custom-ellipsis__text_inner">
+            网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+          </div>
+        </div>
+        <div class="weui-custom-ellipsis__placeholder"></div>
+        <div class="weui-custom-ellipsis__extra">
+          <span class="weui-custom-ellipsis__symbol">...</span>
+          <span>展开</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

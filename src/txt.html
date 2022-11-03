@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    /* 需要不同行数只需要改line这个变量即可 */
+    body{
+      --weui-ellipsis-line:2;
+    }
+    .weui-ellipsis__area{
+      width:700px;
+      display:block;
+      line-height:1.4;
+      text-align:justify;
+    }
+    .weui-ellipsis__wrp{
+      display:inline-block;
+      vertical-align:top;
+    }
+    .weui-ellipsis{
+      overflow:hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: var(--weui-ellipsis-line);
+      -webkit-box-orient: vertical;
+      text-overflow:ellipsis;
+    }
+    .weui-ellipsis__text__wrp{
+      display:inline;
+    }
+    .weui-ellipsis__text{
+      display:inline;
+    }
+    .weui-ellipsis__placeholder{
+      width:0;
+      float:right;
+      height:calc(1.4em * (var(--weui-ellipsis-line) - 1));
+    }
+    .weui-ellipsis__extra{
+      float:right;
+      clear:both;
+    }
+
+    .weui-ellipsis__placeholder,
+    .weui-ellipsis__extra {
+      display:none;
+    }
+
+    /*
+       weui-ellipsis的高度为出省略号的高度:a
+       weui-ellipsis__text的高度为真实高度:b
+       b - a > 1的时候表示需要出省略号，往weui-ellipsis加weui-ellipsis_multi(由于浏览器对height会有小数点的取整，所以这里判断条件是1，而不是0)
+    */
+    .weui-ellipsis_multi .weui-ellipsis__placeholder,
+    .weui-ellipsis_multi .weui-ellipsis__extra {
+      display:block;
+    }
+
+
+    /*
+       如果需要展开的话，点击展开时，往weui-ellipsis加weui-ellipsis_unfold去掉省略号的限制
+    */
+    .weui-ellipsis__fold-btn{
+      font-size:inherit;
+      color:var(--weui-LINK);
+    }
+    .weui-ellipsis_unfold .weui-ellipsis__placeholder,
+    .weui-ellipsis_unfold .weui-ellipsis__extra{
+      display:none;
+    }
+    .weui-ellipsis_unfold {
+      display:block;
+    }
+  </style>
+</head>
+<body>
+  <div class="weui-ellipsis__area">
+    <div class="weui-ellipsis__wrp">
+      <div class="weui-ellipsis">
+        <div class="weui-ellipsis__text__wrp">
+          <span class="weui-ellipsis__placeholder"></span>
+          <span class="weui-ellipsis__extra">
+            <span>标签</span>
+          </span>
+          <span class="weui-ellipsis__text">
+            未超过两行样式&nbsp;&nbsp;&nbsp;&nbsp;网络社交平台已经成为人与人之间一张重要的“关系网”
+            <span>标签</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="weui-ellipsis__area">
+    <div class="weui-ellipsis__wrp">
+      <div class="weui-ellipsis weui-ellipsis_multi">
+        <div class="weui-ellipsis__text__wrp">
+          <span class="weui-ellipsis__placeholder"></span>
+          <span class="weui-ellipsis__extra">
+            <span>标签</span>
+          </span>
+          <span class="weui-ellipsis__text">
+            超过两行省略号的样式&nbsp;&nbsp;&nbsp;&nbsp;网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验
+            <span>标签</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="weui-ellipsis__area">
+    <div class="weui-ellipsis__wrp">
+      <div class="weui-ellipsis weui-ellipsis_multi">
+        <div class="weui-ellipsis__text__wrp">
+          <span class="weui-ellipsis__placeholder"></span>
+          <span class="weui-ellipsis__extra">
+            <span>标签</span>
+            <span>展开</span>
+          </span>
+          <span class="weui-ellipsis__text">
+            超过两行省略号带展开的样式&nbsp;&nbsp;&nbsp;&nbsp;网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验
+            <span>标签</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="weui-ellipsis__area">
+    <div class="weui-ellipsis__wrp">
+      <div class="weui-ellipsis weui-ellipsis_multi weui-ellipsis_unfold">
+        <div class="weui-ellipsis__text__wrp">
+          <span class="weui-ellipsis__placeholder"></span>
+          <span class="weui-ellipsis__extra">
+            <span>标签</span>
+            <span>展开</span>
+          </span>
+          <span class="weui-ellipsis__text">
+            超过两行省略号的已展开样式&nbsp;&nbsp;&nbsp;&nbsp;网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验
+            <span>标签</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

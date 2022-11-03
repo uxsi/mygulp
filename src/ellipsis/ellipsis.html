@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="./ellipsis.css">
+  <link rel="stylesheet" href="./demo.css">
+</head>
+<body>
+  <div class="demo">
+    <div class="demo_title">原生省略号</div>
+    <div class="demo_desc">
+      <p>需要js判断超过最大行数，见下A2</p>
+      <p>优点代码成本低，缺点是省略号左右间距不可定制</p>
+      <p>css变量--ellipsisFontSize: 字号</p>
+      <p>css变量--ellipsisLine: 最大行数</p>
+      <p>原理见：<a href="./demo.html">原理A</a> </p>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo_title">A1 原生省略号后带内容</div>
+    <div class="demo_desc">
+      <p>未超过最大行数</p>
+    </div>
+    <div class="weui-ellipsis">
+      <span class="weui-ellipsis__placeholder"></span>
+      <span class="weui-ellipsis__extra">
+        <span>标签</span>
+      </span>
+      <span class="weui-ellipsis__text">
+        网络社交平台已经成为人与人之间一张重要的“关系网”。
+        <span>标签</span>
+      </span>
+    </div>
+  </div>
+  <div class="demo">
+    <div class="demo_title">A2 原生省略号后带内容</div>
+    <div class="demo_desc">
+      <p>超过最大行数</p>
+      <p>weui-ellipsis的高度为最大行数高度:a</p>
+      <p>weui-ellipsis__text的高度为真实高度:b</p>
+      <p>b - a > 1 的时候表示需要出省略号，往weui-ellipsis加weui-ellipsis_multi</p>
+      <p>由于浏览器对height会有小数点的取整，所以这里判断条件是1，而不是0</p>
+    </div>
+    <div class="weui-ellipsis weui-ellipsis_multi">
+      <span class="weui-ellipsis__placeholder"></span>
+      <span class="weui-ellipsis__extra">
+        <span>标签</span>
+      </span>
+      <span class="weui-ellipsis__text">
+        网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+        <span>标签</span>
+      </span>
+    </div>
+  </div>
+  <div class="demo">
+    <div class="demo_title">B1 原生省略号后带展开</div>
+    <div class="demo_desc">
+      <p>收起状态</p>
+    </div>
+    <div class="weui-ellipsis weui-ellipsis_multi">
+      <span class="weui-ellipsis__placeholder"></span>
+      <span class="weui-ellipsis__extra">
+        <span>展开</span>
+      </span>
+      <span class="weui-ellipsis__text">
+        网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+      </span>
+    </div>
+  </div>
+  <div class="demo">
+    <div class="demo_title">B2 原生省略号后带展开</div>
+    <div class="demo_desc">
+      <p>展开状态</p>
+      <p>展开加weui-ellipsis_unfold</p>
+    </div>
+    <div class="weui-ellipsis weui-ellipsis_multi weui-ellipsis_unfold">
+      <span class="weui-ellipsis__placeholder"></span>
+      <span class="weui-ellipsis__extra">
+        <span>展开</span>
+      </span>
+      <span class="weui-ellipsis__text">
+        网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+      </span>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+@keyframes width-change {
+  0%, 100% {
+    width: 600px;
+  }
+  50% {
+    width: 200px;
+  }
+}
+
+.ell-box {
+  position: relative;
+  margin: 0;
+  width: 268px;
+  max-height: 60px;
+  overflow: hidden;
+/*   background-color: rgba(0, 169, 212, 0.44); */
+  animation: width-ch234ange 8s infinite;
+}
+
+.ell-box__text {
+  position: relative;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 60px;
+  line-height: 0;
+  letter-spacing: 0;
+  color: transparent;
+/*   color: red; */
+/*   text-align: justify; */
+/*   background-color: rgba(255, 244, 94, 0.5); */
+  word-break: break-all;
+}
+
+.ell-box__inner {
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  vertical-align: top;
+  letter-spacing: 0;
+/*   background-color: rgba(0,0,0,0.2); */
+}
+
+.ell-box__inner.inline {
+  display: inline;
+}
+
+.ell-box__inner.fake {
+  color: transparent;
+}
+
+.ell-box__fake {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: justify;
+}
+
+.ell-box__abs {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.ell-box__abs::before {
+  content: "";
+  float: right;
+  width: 50%;
+  height: 100%;
+/*   background-color: rgba(92, 214, 255, 0.54); */
+}
+
+.ell-box__placeholder {
+  float: right;
+  width: 50%;
+  height: 60px;
+/*   background-color: rgba(243, 33, 33, 0.54); */
+}
+
+.ell-box__more {
+  float: right;
+  width: 60px;
+  height: 20px;
+  line-height: 20px;
+  text-align: right;
+  font-size: 14px;
+  color: #666;
+  margin-top: -20px;
+/*   background-color: rgba(40, 62, 233, 0.5);  */
+}
+
+  </style>
+</head>
+<body>
+  
+<div class="ell-box">
+  <div class="ell-box__text">
+    <div class="ell-box__inner inline">Tencent is an Internet-based platform company
+using technology to enrich the lives of Internet users and assist the digital upgrade of enterprises.
+Our mission is "Value for Users, Tech for Good".
+    </div>
+  </div>
+  <div class="ell-box__fake">
+    <div class="ell-box__inner fake">Tencent is an Internet-based platform company
+using technology to enrich the lives of Internet users and assist the digital upgrade of enterprises.
+Our mission is "Value for Users, Tech for Good".</div>
+    <div class="ell-box__abs">
+      <div class="ell-box__placeholder"></div>
+      <div class="ell-box__more">... [More]</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

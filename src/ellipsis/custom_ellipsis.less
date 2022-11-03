@@ -1,0 +1,70 @@
+:root{
+  --ellipsisLine:2;
+  --ellipsisFontSize:1rem;
+}
+
+.weui-custom-ellipsis__wrp {
+  position: relative;
+  max-height:calc(var(--ellipsisLine) * 1.4em);
+  overflow:hidden;
+
+  line-height: 1.4;
+  text-align:justify;
+}
+.weui-custom-ellipsis__text {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--ellipsisLine);
+  -webkit-box-orient: vertical;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  font-size: 60px;
+  line-height: 0;
+  color:transparent;
+}
+.weui-custom-ellipsis__text_inner {
+  display:inline;
+  vertical-align:bottom;
+
+  font-size:var(--ellipsisFontSize);
+  line-height:1.4;
+  color:initial;
+}
+.weui-custom-ellipsis {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200%;
+  pointer-events:none;
+}
+.weui-custom-ellipsis__fake-text,
+.weui-custom-ellipsis__placeholder,
+.weui-custom-ellipsis__extra {
+  float: left;
+}
+.weui-custom-ellipsis__fake-text {
+  visibility: hidden;
+  width: 50%;
+}
+.weui-custom-ellipsis__placeholder {
+  width: 50%;
+  height: calc(100% + 1px);
+}
+.weui-custom-ellipsis__extra {
+  -ms-transform: translate(-100%, -100%);
+  transform: translate(-100%, calc(-100% - 1px));
+}
+.weui-custom-ellipsis__extra {
+  text-align: right;
+  pointer-events:auto;
+}
+
+
+.weui-custom-ellipsis_unfold{
+  max-height:none;
+  .weui-custom-ellipsis__text{
+    display:block;
+  }
+}
+

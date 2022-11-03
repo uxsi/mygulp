@@ -1,0 +1,53 @@
+body{
+  --ellipsisLine:2;
+  --ellipsisFontSize:1rem;
+}
+.weui-ellipsis{
+  overflow:hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--ellipsisLine);
+  -webkit-box-orient: vertical;
+  text-overflow:ellipsis;
+
+  line-height:1.4;
+  font-size:var(--ellipsisFontSize);
+  text-align:justify;
+}
+.weui-ellipsis__text__wrp{
+  display:inline;
+}
+.weui-ellipsis__text{
+  display:inline;
+}
+.weui-ellipsis__placeholder{
+  width:0;
+  float:right;
+  height:calc(1.4em * (var(--ellipsisLine) - 1));
+}
+.weui-ellipsis__extra{
+  float:right;
+  clear:both;
+}
+.weui-ellipsis__placeholder,
+.weui-ellipsis__extra {
+  display:none;
+}
+
+// 多行
+.weui-ellipsis_multi{
+  .weui-ellipsis__placeholder,
+  .weui-ellipsis__extra {
+    display:block;
+  }
+}
+
+
+// 展开
+.weui-ellipsis_unfold{
+  display:block;
+
+  .weui-ellipsis__placeholder,
+  .weui-ellipsis__extra{
+    display:none;
+  }
+}

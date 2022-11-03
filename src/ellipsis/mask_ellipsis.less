@@ -1,0 +1,60 @@
+:root{
+  --ellipsisLine:2;
+  --ellipsisFontSize:1rem;
+}
+
+.weui-mask-ellipsis__wrp{
+  line-height:1.4;
+  font-size:var(--ellipsisFontSize);
+  height:calc(var(--ellipsisLine) * 1.4em);//默认最大行数为2行
+  overflow:hidden;//这个hidden是为了截断.weui-mask-ellipsis的200%宽度
+}
+.weui-mask-ellipsis__placeholder{
+  width:50%;
+  height:calc(var(--ellipsisLine) * 1.4em + .1em);//默认最大行数为2行，加.1em是规避text高度取整带来差异
+}
+.weui-mask-ellipsis{width:200%;}
+.weui-mask-ellipsis__text,.weui-mask-ellipsis__placeholder,.weui-mask-ellipsis__extra{float:left;}
+.weui-mask-ellipsis__text{width:50%;}
+.weui-mask-ellipsis__extra{transform:translate(-100%,calc(-100% - .1em));}//.1em是因为placeholder加高了.1em
+
+// 渐变遮罩
+.weui-mask-ellipsis__extra{
+  min-width:5.6em;
+  text-align:right;
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1) 40%);
+}
+
+// 展开
+.weui-mask-ellipsis_unfold{
+  height:unset;
+  .weui-mask-ellipsis__placeholder{
+    height:unset;
+  }
+}
+
+// 自适应高度
+.weui-mask-ellipsis_auto-height{
+  position:relative;
+  height:auto;
+  max-height:calc(var(--ellipsisLine) * 1.4em);//默认最大行数为2行
+
+  //让整个区域在达到最大高度前有真实的高度
+  &>.weui-mask-ellipsis__text{
+    width:100%;
+    visibility:hidden;
+  }
+  .weui-mask-ellipsis{
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+  // 展开
+  &.weui-mask-ellipsis_unfold{
+    max-height:unset;
+  }
+}
+
+
+

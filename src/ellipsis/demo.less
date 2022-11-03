@@ -1,0 +1,79 @@
+*{
+  margin:0;
+  padding:0;
+}
+.demo{
+  max-width:500px;
+  margin:40px 20px;
+
+  .a,.b,.c{
+    border:1px solid;
+    box-sizing:border-box;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .weui-mask-ellipsis__wrp,
+  .weui-custom-ellipsis__wrp,
+  .weui-ellipsis{
+    outline:1px solid;
+  }
+}
+.demo_title{
+  font-size:20px;
+  font-weight:500;
+  margin-bottom:4px;
+}
+.demo_desc{
+  font-size:14px;
+  margin-bottom:4px;
+  opacity:.55;
+}
+
+@media(prefers-color-scheme:dark){
+  body{
+    background:rgb(25,25,25);
+  }
+  .weui-mask-ellipsis__extra{
+    background: linear-gradient(to right, rgba(25,25,25,0), rgba(25,25,25,1) 40%);
+  }
+}
+
+.float{
+  .b,.c{float:right;width:50px;}
+  .b{height:100px;}
+  .c{clear:right;height:50px;}
+  .a{height:150px;}
+}
+.float_height{
+  overflow:hidden;
+
+  .a,.b,.c{float:left;}
+  .a,.b{width:50%;}
+  .b,.c{height:100px;}
+  .c{width:100px;}
+}
+.ellipsis_demo{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.ellipsis_demo_multi{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.ellipsis_demo_inner{
+  display:inline;
+  vertical-align:bottom;
+  line-height:1.4;
+  font-size:1rem;
+  color:initial;
+}
+.ellipsis_hide{
+  font-size:50px;
+  line-height:0;
+}

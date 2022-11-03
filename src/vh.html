@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <style>
+    html,body,.wrp{height:100%;margin:0;color:green;}
+    .wrp{display:flex; align-items:center; position:relative; }
+    .block_gray{ position: absolute;width:100%;height:100px;background:#ededed;margin-top:50px;}
+    .line_red{position: absolute;top: 50%;height: 2px;background: red;width: 100%;}
+    .line_blue{position: absolute;top: calc(50% + 50px);height: 2px;background: blue;width: 100%;}
+    .desc{position:absolute;padding:16px;}
+  </style>
+  <div class="desc">
+    <p>红线位置是窗口高度的50%，蓝线位置是窗口高度的50%-50px，灰色块flex居中，高度为100px</p>
+    <p>如果给灰色块加一个margin-top:50px，ios15.4以上的表现是灰色块以150px（高度100px+外边距50px）保持flex居中，ios15.4以下表现则是高度100px居中后往下偏移外边距50px</p>
+  </div>
+  <div class="wrp">
+    <div class="block_gray">
+    </div>
+    <div class="line_red"></div>
+    <div class="line_blue"></div>
+  </div>
+</body>
+</html>
