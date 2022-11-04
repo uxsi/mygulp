@@ -64,13 +64,6 @@ a{
   .b,.c{height:100px;}
   .c{width:100px;}
 }
-.ellipsis_demo{
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-.multi_ellipsis_demo{
-}
 .multi_ellipsis_demo_text_wrp{
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -95,6 +88,26 @@ a{
   overflow:hidden;
 }
 
+
+.line{
+  font-size:16px;
+  line-height:1.4;
+}
+.ellipsis_demo{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.multi_ellipsis_demo{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.single{
+  -webkit-line-clamp: 1;
+}
 
 @media(prefers-color-scheme:dark){
   :root{

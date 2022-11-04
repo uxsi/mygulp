@@ -28,7 +28,11 @@
 .weui-ellipsis__placeholder{
   width:0;
   float:right;
-  height:calc(1.4em * (var(--ellipsisLine) - 1));
+  word-wrap:break-word;
+  pointer-events:none;
+  &:before{
+    content:"1";
+  }
 }
 .weui-ellipsis__extra{
   float:right;
