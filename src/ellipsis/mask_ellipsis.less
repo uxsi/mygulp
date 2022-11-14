@@ -14,6 +14,7 @@
   line-height:1.4;
   font-size:var(--ellipsisFontSize);
   color:var(--ellipsisColor);
+  text-align:justify;
   height:calc(var(--ellipsisLine) * 1.4em);//默认最大行数为2行
   overflow:hidden;//这个hidden是为了截断.weui-mask-ellipsis的200%宽度
 }
@@ -27,13 +28,18 @@
 }
 .weui-mask-ellipsis__placeholder{
   width:50%;
-  height:calc(var(--ellipsisLine) * 1.4em + .1em);//默认最大行数为2行，加.1em是规避text高度取整带来差异
+  &:before{
+    display:block;
+    content:"12";
+    width:0;
+    word-wrap:break-word;
+  }
 }
 .weui-mask-ellipsis__text{
   width:50%;
 }
 .weui-mask-ellipsis__extra{
-  transform:translate(-100%,calc(-100% - .1em));//.1em是因为placeholder加高了.1em
+  transform:translate(-100%,-100%);
 }
 
 // 渐变遮罩
@@ -46,8 +52,9 @@
 // 展开
 .weui-mask-ellipsis_unfold{
   height:unset;
-  .weui-mask-ellipsis__placeholder{
-    height:unset;
+  .weui-mask-ellipsis__placeholder,
+  .weui-mask-ellipsis__extra{
+    display:none;
   }
 }
 

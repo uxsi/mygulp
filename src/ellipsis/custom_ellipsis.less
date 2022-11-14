@@ -59,11 +59,15 @@
 }
 .weui-custom-ellipsis__placeholder {
   width: 50%;
-  height: calc(100% + 1px);
+  &:before{
+    display:block;
+    content:"12";
+    width:0;
+    word-wrap:break-word;
+  }
 }
 .weui-custom-ellipsis__extra {
-  -ms-transform: translate(-100%, -100%);
-  transform: translate(-100%, calc(-100% - 1px));
+  transform: translate(-100%, -100%);
 }
 .weui-custom-ellipsis__extra {
   text-align: right;
@@ -75,6 +79,9 @@
   max-height:none;
   .weui-custom-ellipsis__text{
     display:block;
+  }
+  .weui-custom-ellipsis{
+    display:none;
   }
 }
 

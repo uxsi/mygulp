@@ -12,7 +12,7 @@
   <div class="demo">
     <div class="demo_title">遮罩省略 <a href="./mask_ellipsis.css">下载CSS</a></div>
     <div class="demo_desc">
-      <p>优点是不需要js判断多行，缺点是没有省略号，遮罩渐变的rgb值需要和背景一致</p>
+      <p>优点是支持两端对齐，不需要js判断多行，缺点是没有省略号，遮罩渐变的rgb值需要和背景一致</p>
       <p>高度自适应加classname: weui-mask-ellipsis_auto-height</p>
       <p>css变量--ellipsisFontSize: 字号</p>
       <p>css变量--ellipsisLine: 最大行数</p>
@@ -49,7 +49,36 @@
     </div>
   </div>
   <div class="demo">
-    <div class="demo_title">B1 遮罩省略后带内容、高度自适应</div>
+    <div class="demo_title">B1 遮罩省略后带展开、高度固定</div>
+    <div class="demo_desc">收起状态</div>
+    <div class="weui-mask-ellipsis__wrp">
+      <div class="weui-mask-ellipsis">
+        <div class="weui-mask-ellipsis__text">
+          网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+        </div>
+        <div class="weui-mask-ellipsis__placeholder"></div>
+        <div class="weui-mask-ellipsis__extra"><span>展开</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo">
+    <div class="demo_title">B2 遮罩省略后带展开、高度固定</div>
+    <div class="demo_desc">
+      <p>展开状态</p>
+      <p>展开加weui-mask-ellipsis_unfold</p>
+    </div>
+    <div class="weui-mask-ellipsis__wrp weui-mask-ellipsis_unfold">
+      <div class="weui-mask-ellipsis">
+        <div class="weui-mask-ellipsis__text">
+          网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+        </div>
+        <div class="weui-mask-ellipsis__placeholder"></div>
+        <div class="weui-mask-ellipsis__extra"><span>展开</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo">
+    <div class="demo_title">C1 遮罩省略后带内容、高度自适应</div>
     <div class="demo_desc">
       <p>该区域的高度不固定，最大高度为最大行数高度</p>
     </div>
@@ -69,7 +98,7 @@
     </div>
   </div>
   <div class="demo">
-    <div class="demo_title">B2 遮罩省略后带内容、高度自适应</div>
+    <div class="demo_title">C2 遮罩省略后带内容、高度自适应</div>
     <div class="demo_desc">该区域的高度不固定，最大高度为最大行数高度</div>
     <div class="weui-mask-ellipsis__wrp weui-mask-ellipsis_auto-height">
       <div class="weui-mask-ellipsis__text">
@@ -87,7 +116,7 @@
     </div>
   </div>
   <div class="demo">
-    <div class="demo_title">C1 遮罩省略后带展开、高度自适应</div>
+    <div class="demo_title">D1 遮罩省略后带展开、高度自适应</div>
     <div class="demo_desc">收起状态</div>
     <div class="weui-mask-ellipsis__wrp weui-mask-ellipsis_auto-height">
       <div class="weui-mask-ellipsis__text">
@@ -103,7 +132,7 @@
     </div>
   </div>
   <div class="demo">
-    <div class="demo_title">C2 遮罩省略后带展开、高度自适应</div>
+    <div class="demo_title">D2 遮罩省略后带展开、高度自适应</div>
     <div class="demo_desc">
       <p>展开状态</p>
       <p>展开加weui-mask-ellipsis_unfold</p>
