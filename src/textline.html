@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    .text{
+      max-width:400px;
+      position:relative;
+      line-height:1.4;
+    }
+    .line{
+      height:1px;
+      background:red;
+      position:absolute;
+      left:0;
+      width:100%;
+      opacity:0;
+      animation: line 1s forwards;
+    }
+    .line1{
+      top:1.4em;
+      width:30%;
+      animation: line1 1s forwards;
+    }
+    .line2{
+      top:2.8em;
+      animation-delay: .2s;
+    }
+    .line3{
+      top:4.2em;
+      animation-delay: .4s;
+    }
+    .line4{
+      top:5.4em;
+      animation-delay: .6s;
+    }
+
+    @keyframes line1 {
+      from {
+        width:30%;
+        opacity:0;
+      }
+      to {
+        width:100%;
+        opacity:1;
+      }
+    }
+    @keyframes line {
+      from {
+        opacity:0;
+      }
+      to {
+        opacity:1;
+      }
+    }
+
+
+    .linetext{
+      text-decoration:underline;
+      position:relative;
+      text-decoration-color:red;
+    }
+    .linetext_fake{
+      color:transparent;
+      position:absolute;
+      text-decoration:underline;
+      text-decoration-color:green;
+      left:0;
+      top:0;
+    }
+
+
+
+    .text_wrp{
+      width:300px;
+      line-height:normal;
+    }
+    .line_text{
+      text-decoration:underline;
+      position:relative;
+      text-decoration-color:transparent;
+    }
+    .fake_line{
+      position:absolute;
+      left:0;
+      white-space:nowrap;
+      width:300px;
+      opacity:0;
+      animation: fakeline 1s forwards;
+      color:transparent;
+      text-decoration:underline;
+      text-decoration-color:green;
+      text-decoration-position:under;
+    }
+    .fake_line1{
+      top:0;
+      width:100px;
+      animation: fakeline1 1s forwards;
+    }
+    .fake_line2{
+      top:1.4em;
+      animation-delay: .2s;
+    }
+    .fake_line3{
+      top:2.8em;
+      animation-delay: .4s;
+    }
+    .fake_line4{
+      top:4.2em;
+      animation-delay: .6s;
+    }
+    @keyframes fakeline {
+      from {
+        opacity:0;
+      }
+      to {
+        opacity:1;
+      }
+    }
+    @keyframes fakeline1 {
+      from {
+        opacity:0;
+        width:100px;
+      }
+      to {
+        opacity:1;
+        width:300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <p>透明文字span盖住</p>
+  <div class="text_wrp">
+    <span class="line_text">网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。
+      <span class="fake_line fake_line1">网络社交平台已经成为人与人之间一张重</span>
+      <span class="fake_line fake_line2">要的“关系网”。人们在网上发表言论，交</span>
+      <span class="fake_line fake_line3">流观点，很多“热搜”话题都会成为街谈巷</span>
+      <span class="fake_line fake_line4">议的焦点。</span>
+  </div>
+
+
+  <!--
+  <div class="text">
+    网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+  </div>
+
+  <div class="linetext">
+    网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+    <div class="linetext_fake">
+      网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
+    </div>
+  </div>
+  -->
+
+  
+  <br>
+  <br>
+</body>
+</html>

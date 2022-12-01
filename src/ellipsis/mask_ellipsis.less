@@ -15,10 +15,21 @@
   font-size:var(--ellipsisFontSize);
   color:var(--ellipsisColor);
   text-align:justify;
-  height:calc(var(--ellipsisLine) * 1.4em);//默认最大行数为2行
   overflow:hidden;//这个hidden是为了截断.weui-mask-ellipsis的200%宽度
+
+  position:relative;
+  max-height:calc(var(--ellipsisLine) * 1.4em);//默认最大行数为2行
+
+  //让整个区域在达到最大高度前有真实的高度
+  &>.weui-mask-ellipsis__text{
+    width:100%;
+    visibility:hidden;
+  }
 }
 .weui-mask-ellipsis{
+  position:absolute;
+  top:0;
+  left:0;
   width:200%;
 }
 .weui-mask-ellipsis__text,
@@ -51,35 +62,10 @@
 
 // 展开
 .weui-mask-ellipsis_unfold{
-  height:unset;
+  max-height:unset;
   .weui-mask-ellipsis__placeholder,
   .weui-mask-ellipsis__extra{
     display:none;
   }
 }
-
-// 自适应高度
-.weui-mask-ellipsis_auto-height{
-  position:relative;
-  height:auto;
-  max-height:calc(var(--ellipsisLine) * 1.4em);//默认最大行数为2行
-
-  //让整个区域在达到最大高度前有真实的高度
-  &>.weui-mask-ellipsis__text{
-    width:100%;
-    visibility:hidden;
-  }
-  .weui-mask-ellipsis{
-    position:absolute;
-    top:0;
-    left:0;
-  }
-
-  // 展开
-  &.weui-mask-ellipsis_unfold{
-    max-height:unset;
-  }
-}
-
-
 
