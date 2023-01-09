@@ -6,15 +6,57 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <style>
-body{background:red;}
-.loading{margin:200px;width:40px;height:40px;background:transparent url(./images/loading.svg) no-repeat 0 0;background-size:cover;}
+@-webkit-keyframes circleLoading {
+  0% {
+    -webkit-transform: rotate3d(0,0,1,0deg);
+    transform: rotate3d(0,0,1,0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0,0,1,360deg);
+    transform: rotate3d(0,0,1,360deg);
+  }
+}
+
+@keyframes circleLoading {
+  0% {
+    -webkit-transform: rotate3d(0,0,1,0deg);
+    transform: rotate3d(0,0,1,0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0,0,1,360deg);
+    transform: rotate3d(0,0,1,360deg);
+  }
+}
+
+body{background:#fff;}
+
+
+.loading{margin:100px;width:40px;height:40px;background:transparent url(./images/loading.svg) no-repeat 0 0;background-size:cover;  }
+.loadingdefault{margin:100px;width:40px;height:40px;background:transparent url(./images/LoadingDefault.svg) no-repeat 0 0;background-size:cover;  -webkit-animation: circleLoading 1s steps(60,end) infinite; animation: circleLoading 1s steps(60,end) infinite;}
+.loadingwhite{margin:100px;width:40px;height:40px;background:transparent url(./images/loading_white.svg) no-repeat 0 0;background-size:cover;}
+.loadingblack{margin:100px;width:40px;height:40px;background:transparent url(./images/loading_black.svg) no-repeat 0 0;background-size:cover;}
+
+
+.loadingimg{position:relative;margin:100px;width:150px;height:150px;background:#f7f7f7 url(./images/loading_black.svg) no-repeat 50% 50%;background-size:16px;border-radius:8px;}
+@media(prefers-color-scheme:dark){
+  body{
+    background:#191919;
+  }
+  .loadingimg{
+    background-color:#202020;
+  }
+}
   </style>
 </head>
 <body>
   <div class="loading"></div>
-  <img src="data:image/svg+xml,%3Csvg%20width%3D%2280%22%20height%3D%2280%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20x1%3D%2294.087%25%22%20y1%3D%220%25%22%20x2%3D%2294.087%25%22%20y2%3D%2290.559%25%22%20id%3D%22a%22%3E%3Cstop%20stop-color%3D%22%23606060%22%20stop-opacity%3D%220%22%20offset%3D%220%25%22%2F%3E%3Cstop%20stop-color%3D%22%23606060%22%20stop-opacity%3D%22.3%22%20offset%3D%22100%25%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20x1%3D%22100%25%22%20y1%3D%228.674%25%22%20x2%3D%22100%25%22%20y2%3D%2290.629%25%22%20id%3D%22b%22%3E%3Cstop%20stop-color%3D%22%23606060%22%20offset%3D%220%25%22%2F%3E%3Cstop%20stop-color%3D%22%23606060%22%20stop-opacity%3D%22.3%22%20offset%3D%22100%25%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20opacity%3D%22.9%22%3E%3Cpath%20d%3D%22M40%200c22.091%200%2040%2017.909%2040%2040S62.091%2080%2040%2080v-7c18.225%200%2033-14.775%2033-33S58.225%207%2040%207V0Z%22%20fill%3D%22url(%23a)%22%2F%3E%3Cpath%20d%3D%22M40%200v7C21.775%207%207%2021.775%207%2040s14.775%2033%2033%2033v7C17.909%2080%200%2062.091%200%2040S17.909%200%2040%200Z%22%20fill%3D%22url(%23b)%22%2F%3E%3Ccircle%20fill%3D%22%23606060%22%20cx%3D%2240.5%22%20cy%3D%223.5%22%20r%3D%223.5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="">
+  <div class="loadingwhite"></div>
+  <div class="loadingblack"></div>
   <br>
   <br>
+  <img class="loadingimg" src="">
   <br>
   <br>
   <br>

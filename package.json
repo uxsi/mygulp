@@ -22,7 +22,8 @@
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-less": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sourcemaps": "^2.6.5",
+    "svgo": "^2.2.0"
   },
   "dependencies": {
     "docx2html": "^1.1.0"

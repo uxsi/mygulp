@@ -1,7 +1,9 @@
 :root{
   --ellipsisLine:2;
   --ellipsisFontSize:1rem;
+  --ellipsisLineHeight:1.4;
   --ellipsisColor:rgba(0,0,0,.9);
+  --ellipsisFoldBtnColor:var(--ellipsisColor);
 }
 
 @media(prefers-color-scheme:dark){
@@ -14,8 +16,7 @@
   position: relative;
   color:var(--ellipsisColor);
   font-size:var(--ellipsisFontSize);
-  line-height: 1.4;
-  max-height:calc(var(--ellipsisLine) * 1.4em);
+  line-height: var(--ellipsisLineHeight);
   overflow:hidden;
   text-align:justify;
 }
@@ -26,9 +27,21 @@
   overflow:hidden;
   text-overflow:ellipsis;
 
+  color:transparent;
   font-size: 72px;
   line-height: 0;
-  color:transparent;
+}
+@supports (-apple-trailing-word:auto){
+  .weui-custom-ellipsis__text {
+    font-size:inherit;
+    letter-spacing:2em;
+  }
+}
+@supports (-webkit-overflow-scrolling:touch){
+  .weui-custom-ellipsis__text {
+    font-size:inherit;
+    letter-spacing:2em;
+  }
 }
 .weui-custom-ellipsis__text__extra ,
 .weui-custom-ellipsis__text__inner {
@@ -36,9 +49,10 @@
   vertical-align:top;
 }
 .weui-custom-ellipsis__text__inner {
-  font-size:var(--ellipsisFontSize);
-  line-height:1.4;
   color:var(--ellipsisColor);
+  font-size:var(--ellipsisFontSize);
+  line-height:var(--ellipsisLineHeight);
+  letter-spacing:normal;
 }
 .weui-custom-ellipsis {
   position: absolute;
@@ -73,10 +87,20 @@
   text-align: right;
   pointer-events:auto;
 }
+.weui-custom-ellipsis__symbol{
+  margin-right:4px;
+}
 
-
+// 收起展开
+.weui-custom-ellipsis__fold-btn{
+  font-size:inherit;
+  color:var(--ellipsisFoldBtnColor);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  outline: 0;
+}
 .weui-custom-ellipsis_unfold{
-  max-height:none;
   .weui-custom-ellipsis__text{
     display:block;
   }
