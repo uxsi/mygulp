@@ -1,0 +1,20 @@
+.rootDark(@rule) {
+  .wx-root[data-weui-theme='dark']& {
+    @rule();
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .wx-root:not([data-weui-theme='light'])& {
+      @rule();
+    }
+  }
+}
+
+:host(.x){
+  .wx{
+    color:red;
+    .rootDark({
+      color:blue;
+    });
+  }
+}

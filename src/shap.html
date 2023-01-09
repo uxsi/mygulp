@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+  .tag{
+    display:none;
+    margin:100px;
+    position:relative;
+    background:#fff;
+    line-height:1.4;
+    background: #07C160;
+    border-radius:4px;
+  }
+  .tag_arrow_wrp{
+    overflow:hidden;
+    width:.8em;
+    position:absolute;
+    height:100%;
+    right:100%;
+  }
+  .tag_arrow{
+    position:absolute;
+    height:100%;
+    transform:rotate(45deg);
+  }
+  .tag_arrow:after{
+    content: "";
+    display: block;
+    height: 100%;
+    width: 1.4em;
+    background: #07C160;
+    transform:skew(10deg,10deg) scale(.7);
+    border-radius:4px;
+  }
+  .radius{
+    width:20px;
+    height:20px;
+    border:20px solid green;
+    border-radius:20px;
+    border-width:0 20px 0 0;
+  }
+  .pop_wrp{
+    padding-top:8px;
+    position:relative;
+    display:inline-block;
+  }
+  .pop{
+    width:200px;
+    height:100px;
+    background:green;
+  }
+  .pop_wrp:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    width:20px;
+    height:20px;
+    transform:rotate(45deg);
+    border-radius:2px;
+    background:green;
+  }
+  </style>
+</head>
+<body>
+  <div class="pop_wrp">
+    <div class="pop"></div>
+    <div class="radius"></div>
+  </div>
+
+  <div class="tag">
+    <div class="tag_arrow_wrp">
+      <div class="tag_arrow"></div>
+    </div>
+    <div class="tag_text">xxx</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+  .slider{width:120px;height:10px;background:red;}
+  </style>
+</head>
+<body>
+  <div id="slider" class="slider" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="进度条" aria-valuetext="50/100"></div>
+  <script>
+    function bindAllEvent(el) {
+      [
+        'focus',
+        'focusin',
+        'focusout',
+        'blur',
+        'reset',
+        'submit',
+        'resize',
+        'scroll',
+        'keydown',
+        'keypress',
+        'keyup',
+        'auxclick',
+        'click',
+        'contextmenu',
+        'dbclick',
+        'mousedown',
+        'mouseenter',
+        'mouseleave',
+        'mousemove',
+        'mouseover',
+        'mouseout',
+        'mouseup',
+        'pointerlockchange',
+        'pointerlockerror',
+        'select',
+        'wheel',
+        'drag',
+        'dragend',
+        'dragenter',
+        'dragstart',
+        'dragleave',
+        'dragover',
+        'drop',
+        'input',
+        'voicechange',
+        'voiceschanged',
+        'touchcancel',
+        'touchend',
+        'touchmove',
+        'touchstart',
+        'change',
+        'dragdrop',
+        'dragexit',
+        'draggesture',
+      ].forEach(function(type) {
+        el.addEventListener(type, function(e) {
+          console.log(type, e);
+        }, true);
+      });
+    }
+
+    var slider = document.getElementById("slider");
+    bindAllEvent(slider);
+  </script>
+</body>
+</html>

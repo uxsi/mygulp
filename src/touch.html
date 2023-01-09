@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    *{margin:0;padding:0;}
+    .draw {
+      height: 200px;
+      border: 2px solid #ccc;
+      overflow: hidden;
+      -webkit-user-select:none;
+      user-select:none;
+    }
+    .content {
+      height:300px;
+      background:gray;
+    }
+
+    .line{
+      width:50px;
+      margin:0 auto;
+      height:4px;
+      background:blue;
+      border-radius:2px;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .dot{
+      opacity:0;
+    }
+  </style>
+</head>
+<body>
+  <div style="visibility:hidden;">你好</div>
+  <div class="draw" id="draw">
+    <div id="content" class="content">
+      <div id="line" class="line">
+        <div id="dot" class="dot">x</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var draw = document.querySelector('#draw');
+    var line = document.querySelector('#line');
+    var content = document.querySelector('#content');
+
+    var start = 0
+    var end = 0
+
+    content.addEventListener('touchstart', function (e) {
+      start = e.changedTouches[0].clientY;
+    })
+
+    content.addEventListener('touchmove', function (e) {
+      var dy = e.changedTouches[0].clientY - start;
+      var tmp = end + dy;
+      if(tmp > 0){
+          content.style.transform = 'translate3d(0, ' + tmp + 'px, 0)';
+      }
+
+      var percent = tmp / 56;
+      percent = percent > 1 ? 1 : percent;
+      line.style.height = 4 + (16 - 4) * percent + 'px';
+      line.style.borderRadius = 2 + (12 - 2) * percent + 'px';
+
+      if(percent >= 0.5){
+        var pear = (percent - 0.5) / 0.5;
+        dot.style.opacity = pear;
+      }
+    })
+
+    content.addEventListener('touchend', function (e) {
+      var dy = e.changedTouches[0].clientY - start;
+      end = end + dy;
+      var max = 56;
+      content.style.transition = 'transform .3s';
+
+      if(end < max){
+          content.style.transform = 'translate3d(0,0,0)';
+          line.style.height = 4 + 'px';
+          line.style.borderRadius = 2 + 'px';
+          dot.style.opacity = 0;
+      } else if(end >= max){
+          content.style.transform = 'translate3d(0,100%,0)';
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    *{margin:0;padding:0;}
+    ul {
+      width: 375px; 
+      height: 667px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+      overflow-y: hidden;    
+    }
+    li {
+      display: inline-block;
+      width: 100%; 
+      height: 100%;
+      scroll-snap-align: center;
+      vertical-align:top;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="./index.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <h1>Example 1</h1>
+  <div id="slider-label">Volume</div>
+  <div class="vol-slider">
+    <a href="#" id="vol-handle" class="handle" role="slider" aria-labelledby="slider-label"
+      aria-valuemin="1"
+      aria-valuemax="100"
+      aria-valuenow="60">
+    </a>
+  </div>
+
+  ----------
+  <h1>Example 2</h1>
+  <div id="slider-label">Weekday:</div>
+  <div class="day-slider">
+    <a href="#" id="day-handle" class="day-slider-handle" role="slider" aria-labelledby="slider-label"
+      aria-valuemin="1"
+      aria-valuemax="7"
+      aria-valuenow="2"
+      aria-valuetext="Monday" onclick="updateSlider()">
+    </a>
+  </div>
+
+  -------------
+  <h1>Example 3</h1>
+
+  <div role="application">
+
+    <h3>Slider Example 1: A Simple Slider</h3>
+
+    <div id="sr1_label" class="hidden">Example 1 Slider</div>
+    <div class="hslider" id="sr1"></div>
+
+    <h3>Slider Example 2: A Range Slider</h3>
+
+    <div id="sr2_label1" class="hidden">Example 2 Slider Low</div>
+    <div id="sr2_label2" class="hidden">Example 2 Slider High</div>
+    <div class="hslider" id="sr2"></div>
+
+    <h3>Slider Example 3: A Vertical Slider</h3>
+
+    <div id="sr3_label" class="hidden">Example 3 Slider</div>
+    <div class="vslider" id="sr3"></div>
+  </div>
+
+
+
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+</head>
+<body>
+  <style>
+.multi_ellipsis{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 80px;
+  line-height: 0;
+  letter-spacing: 0;
+  color: transparent;
+  overflow:hidden;
+  max-height:calc(15 / 80 * 2 * 2em);
+}
+.ellipsis_inner{
+  font-size: 15px;
+  color: #fff;
+  line-height: 2;
+  vertical-align: top;
+  letter-spacing: 0;
+}
+.none{
+  max-height:none;
+}
+  </style>
+  <div class="multi_ellipsis"><span class="ellipsis_inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span></div>
+
+  test
+
+  <div class="multi_ellipsis none"><span class="ellipsis_inner"> sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span></div>
+  test
+</body>
+</html>

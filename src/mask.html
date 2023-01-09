@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <style>
+      .mask_ellipsis_wrp {
+        overflow: hidden;
+        height: calc(2 * 1.4em);
+      }
+      .mask_ellipsis_placeholder {
+        width: 50%;
+        height: calc(2 * 1.4em + 1px);
+      }
+      .mask_ellipsis {
+        width: 200%;
+      }
+      .mask_ellipsis_text,
+      .mask_ellipsis_placeholder,
+      .mask_ellipsis_extra {
+        float: left;
+      }
+      .mask_ellipsis_text {
+        width: 50%;
+      }
+      .mask_ellipsis_extra {
+        -ms-transform: translate(-100%, -100%);
+        transform: translate(-100%, -100%);
+      }
+      .mask_ellipsis_extra {
+        min-width: 5em;
+        text-align: right;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0),
+          #ffffff 50%
+        );
+      }
+      .mask_ellipsis_unfold .mask_ellipsis,
+      .mask_ellipsis_unfold .mask_ellipsis_placeholder {
+        height: auto;
+      }
+
+      .mask_ellipsis_auto_height {
+        position: relative;
+        height: auto;
+        max-height: calc(2 * 1.4em);
+      }
+      .mask_ellipsis_auto_height > .mask_ellipsis_text {
+        width: 100%;
+        visibility: hidden;
+      }
+      .mask_ellipsis_auto_height .mask_ellipsis {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: calc(2 * 1.4em);
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 固定高度为最大行数 -->
+    <div>固定高度为最大行数</div>
+    <div class="mask_ellipsis_wrp">
+      <div class="mask_ellipsis">
+        <div class="mask_ellipsis_text">
+          固定高度为最大行数固定高度为最大行数固定高度为最大行数固定高度为最大行数固定高度为最大行数
+          <span>附加</span>
+        </div>
+        <!--  高度为最大行数高度，并设最小为text高度（防止缩放字号后取整差异） -->
+        <div class="mask_ellipsis_placeholder"></div>
+        <!-- text和placeholder高度不同使得extra浮动后位置不同 -->
+        <div class="mask_ellipsis_extra"><span>附加</span></div>
+      </div>
+    </div>
+    <br /><br />
+    <!-- 动态高度直到最大行数 -->
+    <div>动态高度直到最大行数</div>
+    <div class="mask_ellipsis_wrp mask_ellipsis_auto_height">
+      <div class="mask_ellipsis_text">
+        固定高度为最大行数固定高度为最大行数固定高度为最大行数固定高度为最大行数固定高度为最大行数
+        <span>附加</span>
+      </div>
+      <div class="mask_ellipsis">
+        <div class="mask_ellipsis_text">
+          固定高度为最大行数固定高度为最大行数固定高度为最大行数固定高度为最大行数固定高度为最大行数
+          <span>附加</span>
+        </div>
+        <!--  高度为最大行数高度，并设最小为text高度（防止缩放字号后取整差异） -->
+        <div class="mask_ellipsis_placeholder"></div>
+        <!-- text和placeholder高度不同使得extra浮动后位置不同 -->
+        <div class="mask_ellipsis_extra"><span>附加</span></div>
+      </div>
+    </div>
+  </body>
+</html>
+

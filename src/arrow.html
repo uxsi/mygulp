@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <style>
+  .mod{
+    position:relative;
+    border:1px solid;
+    margin:100px auto;
+    height:100px;
+    width:100px;
+  }
+  .arrow{
+    width:10px;
+    height:10px;
+    transform:rotate(45deg);
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+  }
+  .arrow_in,
+  .arrow_out{
+    width:0;
+    height:0;
+    border-width:10px 10px 0;
+    border-style:solid dashed dashed;
+    position:absolute;
+  }
+  .arrow_in{
+    border-color:black transparent transparent;
+    bottom:-9px;
+    z-index:1;
+  }
+  .arrow_out{
+    border-color:white transparent transparent;
+    bottom:-10px;
+  }
+  </style>
+</head>
+<body>
+  <div class="mod">
+    <div class="arrow"></div>
+  </div>
+  <div class="mod">
+    <div class="arrow_in"></div>
+    <div class="arrow_out"></div>
+  </div>
+</body>
+</html>

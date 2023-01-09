@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>下划线测试用例</title>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="https://res.wx.qq.com/t/wx_fed/weui-source/res/2.5.9/weui.min.css">
+  <style>
+    body{
+      color:var(--weui-FG-0);
+      background:var(--weui-BG-1);
+      padding:0 16px;
+    }
+    section{
+      margin-top:2em;
+      margin-bottom:4em;
+    }
+    p{
+      text-decoration:underline;
+      margin:1.6em 0;
+    }
+
+    .last p{
+      text-underline-position:under;
+    }
+    @supports (-webkit-overflow-scrolling:touch){
+      .last p{
+        text-underline-position:initial;
+        text-underline-offset:.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h2>## 线上效果</h2>
+
+    <p>
+      01234 56789 Elit labore accusafntium molgestiae perferendis est molestiae. Consequuntur itaque sit exercitationem sunt nobis reiciendis, asperiores.
+    </p>
+    <p style="text-decoration:underline">
+      最近，各省的成绩、分数线陆续公布了。又到了考生跟家长们拿着厚厚一本志愿手册，来挑选即将就读的大学的时候了。
+    </p>
+  </section>
+
+
+  <section>
+    <h2>## text-underline-position: under</h2>
+
+    <p style="text-underline-position: under;">
+      01234 56789 Elit labore accusafntium molgestiae perferendis est molestiae. Consequuntur itaque sit exercitationem sunt nobis reiciendis, asperiores.
+    </p>
+    <p style="text-underline-position: under">
+      最近，各省的成绩、分数线陆续公布了。又到了考生跟家长们拿着厚厚一本志愿手册，来挑选即将就读的大学的时候了。
+    </p>
+  </section>
+  
+
+  <section>
+    <h2>## text-underline-offset: .2em</h2>
+
+    <p style="text-underline-offset:.2em">
+      01234 56789 Elit labore accusafntium molgestiae perferendis est molestiae. Consequuntur itaque sit exercitationem sunt nobis reiciendis, asperiores.
+    </p>
+    <p style="text-underline-offset:.2em">
+      最近，各省的成绩、分数线陆续公布了。又到了考生跟家长们拿着厚厚一本志愿手册，来挑选即将就读的大学的时候了。
+    </p>
+  </section>
+
+
+  <section>
+    <h2>## text-underline-offset: 3px</h2>
+
+    <p style="text-underline-offset:3px">
+      01234 56789 Elit labore accusafntium molgestiae perferendis est molestiae. Consequuntur itaque sit exercitationem sunt nobis reiciendis, asperiores.
+    </p>
+    <p style="text-underline-offset:3px">
+      最近，各省的成绩、分数线陆续公布了。又到了考生跟家长们拿着厚厚一本志愿手册，来挑选即将就读的大学的时候了。
+    </p>
+  </section>
+
+
+  <section class="last">
+    <h2>## 整合under + offset:.2em</h2>
+
+    <div>
+      经过对比：<br>
+      - ios下under的效果下划线距离太大，offset效果合适；<br>
+      - android下不支持offset但under的效果合适；<br>
+      - pc chrome/safari下under/offset效果均合适；<br>
+      <strong>under和offset整合起来：默认使用under，针对ios使用offset</strong>
+    </div>
+
+    <p>
+      01234 56789 Elit labore accusafntium molgestiae perferendis est molestiae. Consequuntur itaque sit exercitationem sunt nobis reiciendis, asperiores.
+    </p>
+    <p>
+      最近，各省的成绩、分数线陆续公布了。又到了考生跟家长们拿着厚厚一本志愿手册，来挑选即将就读的大学的时候了。
+    </p>
+  </section>
+  
+</body>
+</html>
