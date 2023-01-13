@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    .white{
+      display: inline-block;
+      vertical-align: middle;
+      width: 80px;
+      height: 80px;
+      -webkit-mask: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E  %3Cdefs%3E    %3ClinearGradient id='42ecdbc5-cb5f-41dc-88b6-1ee9f740fee0-a' x1='94.087%25' x2='94.087%25' y1='0%25' y2='90.559%25'%3E      %3Cstop offset='0%25' stop-color='%23EDEDED' stop-opacity='0'/%3E      %3Cstop offset='100%25' stop-color='%23EDEDED' stop-opacity='.3'/%3E    %3C/linearGradient%3E    %3ClinearGradient id='42ecdbc5-cb5f-41dc-88b6-1ee9f740fee0-b' x1='100%25' x2='100%25' y1='8.674%25' y2='90.629%25'%3E      %3Cstop offset='0%25' stop-color='%23EDEDED'/%3E      %3Cstop offset='100%25' stop-color='%23EDEDED' stop-opacity='.3'/%3E    %3C/linearGradient%3E  %3C/defs%3E  %3Cg fill='none' opacity='.9'%3E    %3Cpath fill='url(%2342ecdbc5-cb5f-41dc-88b6-1ee9f740fee0-a)' d='M40 0c22.091 0 40 17.909 40 40S62.091 80 40 80v-7c18.225 0 33-14.775 33-33S58.225 7 40 7V0z'/%3E    %3Cpath fill='url(%2342ecdbc5-cb5f-41dc-88b6-1ee9f740fee0-b)' d='M40 0v7C21.775 7 7 21.775 7 40s14.775 33 33 33v7C17.909 80 0 62.091 0 40S17.909 0 40 0z'/%3E    %3Ccircle cx='40.5' cy='3.5' r='3.5' fill='%23EDEDED'/%3E  %3C/g%3E%3C/svg%3E") no-repeat 50% 50%;
+      -webkit-mask-size: cover;
+      background-color: currentColor;
+    }
+    .black{
+      display: inline-block;
+      vertical-align: middle;
+      width: 80px;
+      height: 80px;
+      -webkit-mask: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E  %3Cdefs%3E    %3ClinearGradient id='55f4ee8e-a313-4e10-9a07-844ecf2a9990-a' x1='94.087%25' x2='94.087%25' y1='0%25' y2='90.559%25'%3E      %3Cstop offset='0%25' stop-color='%23606060' stop-opacity='0'/%3E      %3Cstop offset='100%25' stop-color='%23606060' stop-opacity='.3'/%3E    %3C/linearGradient%3E    %3ClinearGradient id='55f4ee8e-a313-4e10-9a07-844ecf2a9990-b' x1='100%25' x2='100%25' y1='8.674%25' y2='90.629%25'%3E      %3Cstop offset='0%25' stop-color='%23606060'/%3E      %3Cstop offset='100%25' stop-color='%23606060' stop-opacity='.3'/%3E    %3C/linearGradient%3E  %3C/defs%3E  %3Cg fill='none' opacity='.9'%3E    %3Cpath fill='url(%2355f4ee8e-a313-4e10-9a07-844ecf2a9990-a)' d='M40 0c22.091 0 40 17.909 40 40S62.091 80 40 80v-7c18.225 0 33-14.775 33-33S58.225 7 40 7V0z'/%3E    %3Cpath fill='url(%2355f4ee8e-a313-4e10-9a07-844ecf2a9990-b)' d='M40 0v7C21.775 7 7 21.775 7 40s14.775 33 33 33v7C17.909 80 0 62.091 0 40S17.909 0 40 0z'/%3E    %3Ccircle cx='40.5' cy='3.5' r='3.5' fill='%23606060'/%3E  %3C/g%3E%3C/svg%3E") no-repeat 50% 50%;
+      -webkit-mask-size: cover;
+      background-color: currentColor;
+    }
+    .loading{
+      -webkit-animation: circleLoading 1s steps(60,end) infinite;
+    }
+    @-webkit-keyframes circleLoading {
+      0% {
+        -webkit-transform: rotate3d(0,0,1,0deg);
+        transform: rotate3d(0,0,1,0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate3d(0,0,1,360deg);
+        transform: rotate3d(0,0,1,360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+   <div class="loading white"></div>
+   <div class="loading black"></div>
+</body>
+</html>

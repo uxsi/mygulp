@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title></title>
+</head>
+<body>
+  <p>Dolor tempore velit magnam assumenda distinctio? Dolor voluptatem possimus accusantium odit minima. Beatae optio aliquid officia quaerat iusto inventore? Reiciendis qui voluptate placeat facilis porro Ad ea at vero dolorem</p>
+  <script>
+        function wxReady(callback) {
+          if (
+            typeof WeixinJSBridge === 'object' &&
+            typeof window.WeixinJSBridge.invoke === 'function'
+          ) {
+            callback()
+          } else {
+            document.addEventListener('WeixinJSBridgeReady', callback, false)
+          }
+        }
+        wxReady(function() {
+          WeixinJSBridge.on('menu:setfont', function(res){
+            // ios
+            document.body.style.webkitTextSizeAdjust = 100 + '%';
+
+            // android
+            WeixinJSBridge.invoke("setFontSizeCallback", {
+              fontSize: 2
+            });
+          });
+        });
+  </script>
+</body>
+</html>

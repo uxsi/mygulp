@@ -3,30 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
-  <meta name="color-scheme" content="light dark">
   <title></title>
   <style>
-    .mask{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0);}
-    .dialog{position:fixed;bottom:0;z-index:1;left:0;right:0;height:300px;background:rgba(0,0,0);} 
-    #btn{display:inline-block;}
-    .icon{width:44px;height:44px;border:2px solid;text-indent:-9999em;display:block;}
+    .mask{position:fixed;top:0;left:0;right:0;bottom:0;background:transparent;}
+    dialog{position:fixed;bottom:0;z-index:1;top:0;bottom:0;left:0;right:0;height:300px;background:rgba(0,0,0);} 
+    .dialog_inner{
+      position:relative;
+      z-index:1;
+    }
   </style>
 </head>
 <body>
 
   <a href="javascript:;" id="btn">
-    <span class="icon">
-      弹窗
-    </span>
+    <span class="icon">弹窗</span>
   </a>
-  <div id="dialog" role="dialog" aria-modal="true" class="dialog_wrp" style="display:none;">
+  <dialog id="dialog" role="dialog" aria-modal="true" class="dialog_wrp" style="display:none;">
     <div class="mask"></div>
-    <div class="dialog">
-      <strong class="dialog_title" id="title">2</strong>
-      <button id="show">弹窗2</button>
+    <div class="dialog_inner">
+      <strong class="dialog_title" id="title">dialog标签</strong>
       <button id="close" type="button">关闭</button>
+      <button id="show">弹窗2</button>
     </div>
-  </div>
+  </dialog>
+
   <div id="dialog2" role="alertdialog" class="dialog_wrp" style="display:none;">
     <div class="mask"></div>
     <div class="dialog">
@@ -45,12 +45,9 @@
 
 		btn.addEventListener('click',function(){
       dialog.style.display="block";
-      show.setAttribute('tabindex','-1');
-      show.focus();
 		},false)
 		close.addEventListener('click',function(){
       dialog.style.display="none";
-      btn.focus();
 		},false)
 
   </script>

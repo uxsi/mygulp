@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title></title>
   <meta charset="UTF-8">
+  <title></title>
   <meta name="color-scheme" content="light dark">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <style>
+.weui-wa-hotarea:after {
+  content: "";
+  position:fixed;
+  background:red;
+  width: 1px;
+  height: 1px;
+}
+  </style>
 </head>
 <body>
-  <button>按钮</button>
-  <script src="./wah.js"></script>
-  <script>
-    WAH.default.init()
-  </script>
+  <span href="javascript:void(0);" class="weui-wa-hotarea">愚人音乐坊</span>
 </body>
 </html>

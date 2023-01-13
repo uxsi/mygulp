@@ -14,10 +14,12 @@
     <div class="demo_title">模拟省略号 <a href="./custom_ellipsis.css">下载CSS</a></div>
     <div class="demo_desc">
       <p>优点省略号左右间距可定制、支持两端对齐，并且不需要js判断多行，缺点是代码成本高</p>
-      <p>省略号预留位置的大小可通过weui-custom-ellipsis__text的font-size调整</p>
-      <p>两个重复文本是因为苹果系和安卓系下使用省略号定制的时候高度不同，所以新增一个来统一文本的真实高度</p>
+      <p>省略号预留位置的大小可通过weui-custom-ellipsis__text的letter-spacing（ios）、font-size（android）调整</p>
+      <p>两个重复文本是因为苹果系和安卓系下使用多行省略号的时候高度不同，所以新增一个来统一文本的真实高度</p>
       <p>css变量--ellipsisFontSize: 字号</p>
+      <p>css变量--ellipsisLineHeight: 行高</p>
       <p>css变量--ellipsisColor: 字体颜色</p>
+      <p>css变量--ellipsisFoldBtnColor: 展开字体颜色</p>
       <p>css变量--ellipsisLine: 最大行数（指定最大行数时需同时指定weui-custom-ellipsis__placeholder的高度为n行高度，为了消除不同缩放倍数下的取整问题，weui-custom-ellipsis__placeholder的高度需要用真实n行文字来实现，不能直接用em）</p>
       <p>原理见：<a href="./demo.html">原理B</a> 和 <a href="./demo.html">原理C</a> </p>
     </div>
@@ -30,20 +32,20 @@
       <div class="weui-custom-ellipsis__text">
         <div class="weui-custom-ellipsis__text__inner">
           网络社交平台已经成为人与人之间一张重要的“关系网”。
-          <span class="weui-custom-ellipsis__text__extra">标签</span>
+          <span class="weui-custom-ellipsis__text__extra"><span class="tag">标签</span></span>
         </div>
       </div>
       <div class="weui-custom-ellipsis" aria-hidden="true">
         <div class="weui-custom-ellipsis__fake-text">
           <div class="weui-custom-ellipsis__text__inner">
             网络社交平台已经成为人与人之间一张重要的“关系网”。
-            <span class="weui-custom-ellipsis__text__extra">标签</span>
+            <span class="weui-custom-ellipsis__text__extra"><span class="tag">标签</span></span>
           </div>
         </div>
         <div class="weui-custom-ellipsis__placeholder"></div>
         <div class="weui-custom-ellipsis__extra">
           <span class="weui-custom-ellipsis__symbol">...</span>
-          <span class="weui-custom-ellipsis__text__extra">标签</span>
+          <span class="weui-custom-ellipsis__text__extra"><span class="tag">标签</span></span>
         </div>
       </div>
     </div>
@@ -55,20 +57,20 @@
       <div class="weui-custom-ellipsis__text">
         <div class="weui-custom-ellipsis__text__inner">
           网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
-          <span class="weui-custom-ellipsis__text__extra">标签</span>
+          <span class="weui-custom-ellipsis__text__extra"><span class="tag">标签</span></span>
         </div>
       </div>
       <div class="weui-custom-ellipsis" aria-hidden="true">
         <div class="weui-custom-ellipsis__fake-text">
           <div class="weui-custom-ellipsis__text__inner">
             网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。然而，阅读满足于支离破碎的信息拼凑，满足于感官的肤浅体验，放弃思考、失去耐心等待真相，主动向情绪化的观点、评论“缴械”，情绪被左右摆布来回煽动，许多人被“带节奏”而不自知。
-            <span class="weui-custom-ellipsis__text__extra">标签</span>
+            <span class="weui-custom-ellipsis__text__extra"><span class="tag">标签</span></span>
           </div>
         </div>
         <div class="weui-custom-ellipsis__placeholder"></div>
         <div class="weui-custom-ellipsis__extra">
           <span class="weui-custom-ellipsis__symbol">...</span>
-          <span class="weui-custom-ellipsis__text__extra">标签</span>
+          <span class="weui-custom-ellipsis__text__extra"><span class="tag">标签</span></span>
         </div>
       </div>
     </div>
@@ -91,7 +93,7 @@
         <div class="weui-custom-ellipsis__placeholder"></div>
         <div class="weui-custom-ellipsis__extra">
           <span class="weui-custom-ellipsis__symbol">...</span>
-          <span>展开</span>
+          <button class="weui-custom-ellipsis__fold-btn" type="button">展开</button>
         </div>
       </div>
     </div>
@@ -117,7 +119,7 @@
         <div class="weui-custom-ellipsis__placeholder"></div>
         <div class="weui-custom-ellipsis__extra">
           <span class="weui-custom-ellipsis__symbol">...</span>
-          <span>展开</span>
+          <button class="weui-custom-ellipsis__fold-btn" type="button">展开</button>
         </div>
       </div>
     </div>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    .text_wrp{
+      background:rgba(255,0,0,.3);
+      line-height:1.6;
+      font-size:15px;
+    }
+    .line_text{
+      background:rgba(0,255,0,.3);
+    }
+    body{margin:0;}
+  </style>
+</head>
+<body>
+
+  <div style="font-size:32px;line-height:2;"><span>test My hi网络社交平台已经成为人与人之间一张重要网络社交平台已经成为人与人之间一张重要的的</span></div>
+  <div style="font-size:32px;line-height:2;color:red;position:absolute;left:67px;top:0;"><span>My</span></div>
+  
+  <div class="text_wrp" id="wrp">
+    <span class="line_text" id="txt">网络社交平台已经成为人与人之间一张重要的“关系网”。人们在网上发表言论，交流观点，很多“热搜”话题都会成为街谈巷议的焦点。
+  </div>
+
+  <div id="value"></div>
+
+
+  <script>
+    var wrp = document.getElementById('wrp');
+    var txt = document.getElementById('txt');
+    var value = document.getElementById('value');
+
+    value.innerHTML = '红色 段落高度：' + wrp.offsetHeight +  '，绿色 文字高度：' + txt.offsetHeight;
+
+  </script>
+</body>
+</html>

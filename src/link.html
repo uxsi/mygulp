@@ -5,26 +5,24 @@
   <title></title>
   <meta name="color-scheme" content="light dark">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <link rel="stylesheet" href="//res.wx.qq.com/t/wx_fed/weui-source/res/2.5.4/weui.css">
 </head>
 <body>
-  <div role="link" id="link">hi</div>
-  <a href="#" id="link2">我们</a>
-  <div role="alert" aria-live="assertive" id="alert" style="display:none;">通知</div>
-  <script type="text/javascript">
-    var link = document.getElementById("link");
-    var link2 = document.getElementById("link2");
-    var js_alert = document.getElementById("alert");
-		link.addEventListener('click',function(){
-      this.innerHTML = '关闭';
-      js_alert.style.display = 'block';
-      setTimeout(function(){
-        link2.focus();
-      },1000)
-		},false)
-		link2.addEventListener('click',function(){
-      this.innerHTML = '你好';
-		},false)
+  <a href="javascript:void(0);">愚人音乐坊</a>
 
-  </script>
+  <a href="#" class="test">你好</a>
+
+  <div role="link" aria-labelledby="js_article-tag-card__left js_article-tag-card__right" tabindex="0">
+    <span aria-hidden="true" id="js_article-tag-card__left"><span>收录于话题</span><span><span>#视障微课堂</span></span></span>
+    <span aria-hidden="true" id="js_article-tag-card__right">10个</span>
+  </div>
+
+  <div role="link" aria-labelledby="t1 t2">
+    <span id="t1" aria-hidden="true">你好</span>
+    <span id="t2" aria-hidden="true">关闭</span>
+  </div>
+  <div role="link" id="link2">role=link2</div>
+  <div tabindex="0" role="link" id="link3">role=link3</div>
+  <a tabindex="0" id="link4">原生a链接4</a>
 </body>
 </html>

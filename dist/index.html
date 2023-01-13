@@ -8,12 +8,18 @@
   <link rel="apple-touch-icon-precomposed" href="//res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png">
   <meta name="color-scheme" content="light dark">
   <title>x</title>
-  <link rel="stylesheet" href="./style/index.css" media="all">
+  <style>
+@supports (-apple-trailing-word:auto){
+  body{
+  color:green;
+  }
+}
+  </style>
 </head>
 <body>
   <div style="font-size:20px;line-height:30px;">test</div>
 
-  <p class="noto1">設備微信wechat 原生400</p>
+  <p class="noto1">"" “”設備微信wechat 原生400</p>
   <p class="noto2">設備微信wechat 原生500</p>
   <p class="noto3">設備微信wechat 原生700</p>
   <p class="noto_stroke">設備微信wechat stroke .4px 模拟500</p>
@@ -53,5 +59,14 @@
   Consectetur sit eaque aspernatur perferendis temporibus fugiat Dolores eaque commodi suscipit doloremque tempora at deserunt recusandae Rem laudantium laborum officiis ab inventore. Officia fugiat laborum neque tempora inventore ea sunt.
   我们一直致力于为用户提供绿色、健康的生态环境，努力打造一个企业、机构与个人用户之间交流和服务的优质平台，给予用户更多的选择和便利，进一步降低沟通和交易成本并创造更多的社会价值。
   </p>
+  <script>
+    window.WeixinJSBridge.invoke('hideOptionMenu');
+    window.WeixinJSBridge.invoke('setNavigationBarButtons', {
+      right: {
+        hidden: true,
+        text: ' ',
+      },
+    });
+  </script>
 </body>
 </html>

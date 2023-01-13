@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <style>
+      [role="dialog"] {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="js_dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-autofocus="true"
+      style="display: none;"
+    >
+      hello
+      <div tabindex="0">world</div>
+      <button id="js_close">close</button>
+    </div>
+    <button id="js_btn">show</button>
+    <script>
+      var btn = document.getElementById("js_btn");
+      var close = document.getElementById("js_close");
+      var dialog = document.getElementById("js_dialog");
+      btn.addEventListener("click", function () {
+        dialog.style.display = "";
+      });
+      close.addEventListener("click", function () {
+        dialog.style.display = "none";
+      });
+
+      new MutationObserver(function(mutations,observer){
+        for (const mutation of mutations) {
+          for (const addedNode of mutation.addedNodes) {
+            if (addedNode.getAttribute('role') === 'dialog' && addedNode.getAttribute('aria-modal') !== 'false') {
+              const targetNode = addedNode.querySelector('[tabindex]')
+              if (targetNode) targetNode.focus()
+            }
+          }
+        }
+      }).observe(document.body, { childList: true, subtree: true })
+    </script>
+  </body>
+</html>
+
