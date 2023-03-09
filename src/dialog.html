@@ -6,7 +6,7 @@
   <title></title>
   <style>
     .mask{position:fixed;top:0;left:0;right:0;bottom:0;background:transparent;}
-    dialog{position:fixed;bottom:0;z-index:1;top:0;bottom:0;left:0;right:0;height:300px;background:rgba(0,0,0);} 
+    .dialog{position:fixed;bottom:0;z-index:1;top:0;bottom:0;left:0;right:0;height:300px;background:rgba(0,0,0);} 
     .dialog_inner{
       position:relative;
       z-index:1;
@@ -18,14 +18,14 @@
   <a href="javascript:;" id="btn">
     <span class="icon">弹窗</span>
   </a>
-  <dialog id="dialog" role="dialog" aria-modal="true" class="dialog_wrp" style="display:none;">
+  <div class="dialog" tabindex="0" aria-hidden="true" id="dialog" role="dialog" aria-modal="true" class="dialog_wrp" style="display:none;">
     <div class="mask"></div>
     <div class="dialog_inner">
       <strong class="dialog_title" id="title">dialog标签</strong>
       <button id="close" type="button">关闭</button>
       <button id="show">弹窗2</button>
     </div>
-  </dialog>
+  </div>
 
   <div id="dialog2" role="alertdialog" class="dialog_wrp" style="display:none;">
     <div class="mask"></div>
@@ -45,10 +45,19 @@
 
 		btn.addEventListener('click',function(){
       dialog.style.display="block";
+      dialog.setAttribute("aria-hidden","false");
+      dialog.focus();
 		},false)
 		close.addEventListener('click',function(){
       dialog.style.display="none";
+      dialog.setAttribute("aria-hidden","true");
 		},false)
+
+    setTimeout(function(){
+      dialog.style.display="block";
+    },3000);
+
+
 
   </script>
 
