@@ -9,18 +9,18 @@
 </head>
 <body>
   <div class="page">
-    <div class="page__hd">
+    <div aria-hidden="true" class="page__hd">
       <h1 class="page__title">Half-screen Dialog</h1>
       <p class="page__desc">半屏组件</p>
     </div>
-    <div class="page__bd page__bd_spacing">
+    <div aria-hidden="true" class="page__bd page__bd_spacing">
       <a href="javascript:" role="button" class="weui-btn weui-btn_default" id="showIOSDialog1">样式一</a>
       <a href="javascript:" role="button" class="weui-btn weui-btn_default" id="showIOSDialog2">样式二</a>
     </div>
 
     <div id="dialogs">
       <!--BEGIN dialog1-->
-      <div class="js_dialog" aria-labelledby="js_title1" role="dialog" aria-modal="false" aria-hidden="true" id="iosDialog1" style="display: none;">
+      <div class="js_dialog" aria-labelledby="js_title1" role="dialog" aria-modal="true" aria-hidden="false" id="iosDialog1" style="display: none;">
         <div class="weui-mask"></div>
         <div id="js_dialog_1" class="weui-half-screen-dialog">
           <div class="weui-half-screen-dialog__hd">
@@ -44,7 +44,7 @@
       </div>
       <!--END dialog1-->
       <!--BEGIN dialog2-->
-      <div class="js_dialog" aria-labelledby="js_title2" role="dialog" aria-modal="false" aria-hidden="true" id="iosDialog2" style="display: none;">
+      <div class="js_dialog" aria-labelledby="js_title2" role="dialog" aria-modal="true" aria-hidden="false" id="iosDialog2" style="display: block;">
         <div class="weui-mask"></div>
         <div id="js_dialog_2" class="weui-half-screen-dialog">
           <div class="weui-half-screen-dialog__hd">

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="https://res.wx.qq.com/t/wx_fed/weui-source/res/2.5.16/weui.min.css">
+  <style>
+    :root{
+      --weui-BG-6:rgba(0,0,0,.05);
+    }
+    @media(prefers-color-scheme:dark){
+      :root{
+        --weui-BG-6:rgba(255,255,255,.1);
+      }
+    }
+    .onepx_list{
+      margin-bottom:80px;
+    }
+    .onepx{
+      position:relative;
+      padding:16px;
+    }
+    .onepx:before{
+      content: " ";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 1px;
+      color: var(--weui-FG-3);
+      border-bottom: 1px solid currentColor;
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+    .scale3 .onepx:before{
+      -webkit-transform: scaleY(0.3);
+      transform: scaleY(0.3);
+    }
+    .color5 .onepx:before{
+      border-bottom: 1px solid var(--weui-BG-6);
+    }
+    .background{
+      background:var(--weui-BG-3);
+    }
+  </style>
+</head>
+<body>
+  <div class="onepx_area">
+    <div class="onepx_list">
+      <div class="onepx">0.5px 10%半透明</div>
+      <div class="onepx">0.5px 10%半透明</div>
+    </div>
+    <div class="onepx_list scale3">
+      <div class="onepx">0.3px 10%半透明</div>
+      <div class="onepx">0.3px 10%半透明</div>
+    </div>
+    <div class="onepx_list color5">
+      <div class="onepx">0.5px 5%半透明（darkmode下为10%半透明）</div>
+      <div class="onepx">0.5px 5%半透明（darkmode下为10%半透明）</div>
+    </div>
+  </div>
+  <div class="onepx_area background">
+    <div class="onepx_list">
+      <div class="onepx">0.5px 10%半透明</div>
+      <div class="onepx">0.5px 10%半透明</div>
+    </div>
+    <div class="onepx_list scale3">
+      <div class="onepx">0.3px 10%半透明</div>
+      <div class="onepx">0.3px 10%半透明</div>
+    </div>
+    <div class="onepx_list color5">
+      <div class="onepx">0.5px 5%半透明（darkmode下为10%半透明）</div>
+      <div class="onepx">0.5px 5%半透明（darkmode下为10%半透明）</div>
+    </div>
+  </div>
+</body>
+</html>

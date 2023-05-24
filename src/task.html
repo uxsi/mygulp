@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>任务清单示例</title>
+  <style>
+    /* 这里添加您的样式代码 */
+  </style>
+</head>
+<body>
+  <h1>任务清单</h1>
+  <input id="newTask" type="text" placeholder="请输入任务">
+  <button onclick="addTask()">添加任务</button>
+  <ul id="taskList"></ul>
+
+  <script>
+    function addTask() {
+      const newTask = document.getElementById("newTask").value;
+      if (!newTask) return;
+
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `
+        <input type="checkbox" onclick="toggleDone(this)">
+        <span>${newTask}</span>
+        <button onclick="deleteTask(this)">删除</button>
+      `;
+      document.getElementById("taskList").appendChild(listItem);
+      document.getElementById("newTask").value = "";
+    }
+
+    function toggleDone(checkbox) {
+      const task = checkbox.nextElementSibling;
+      if (checkbox.checked) {
+        task.style.textDecoration = "line-through";
+      } else {
+        task.style.textDecoration = "none";
+      }
+    }
+
+    function deleteTask(button) {
+      button.parentElement.remove();
+    }
+  </script>
+</body>
+</html>
