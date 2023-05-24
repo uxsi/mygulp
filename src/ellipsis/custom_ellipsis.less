@@ -3,7 +3,9 @@
   --ellipsisFontSize:1rem;
   --ellipsisLineHeight:1.4;
   --ellipsisColor:rgba(0,0,0,.9);
-  --ellipsisFoldBtnColor:var(--ellipsisColor);
+
+  --ellipsisSymbolWidth:60px;
+  --ellipsisSymbolWidthApple:2em;
 }
 
 @media(prefers-color-scheme:dark){
@@ -26,36 +28,32 @@
   -webkit-box-orient: vertical;
   overflow:hidden;
   text-overflow:ellipsis;
-}
 
-// 利用原生省略号占位
-.weui-custom-ellipsis__text {
   color:transparent;
-  font-size: 72px;
   line-height: 0;
+  font-size: var(--ellipsisSymbolWidth);
 }
 @supports (-apple-trailing-word:auto){
   .weui-custom-ellipsis__text {
     font-size:inherit;
-    letter-spacing:2em;
+    letter-spacing:var(--ellipsisSymbolWidthApple);
   }
 }
 @supports (-webkit-overflow-scrolling:touch){
   .weui-custom-ellipsis__text {
     font-size:inherit;
-    letter-spacing:2em;
+    letter-spacing:var(--ellipsisSymbolWidthApple);
   }
 }
-
 .weui-custom-ellipsis__text__extra ,
 .weui-custom-ellipsis__text__inner {
   display:inline;
   vertical-align:top;
 }
 .weui-custom-ellipsis__text__inner {
-  color:var(--ellipsisColor);
   font-size:var(--ellipsisFontSize);
   line-height:var(--ellipsisLineHeight);
+  color:var(--ellipsisColor);
   letter-spacing:normal;
 }
 .weui-custom-ellipsis {
@@ -86,23 +84,25 @@
 }
 .weui-custom-ellipsis__extra {
   transform: translate(-100%, -100%);
+}
+.weui-custom-ellipsis__extra {
   text-align: right;
   pointer-events:auto;
   font-size:0;
 }
 .weui-custom-ellipsis__symbol{
-  margin-right:4px;
   font-size:var(--ellipsisFontSize);
+  margin-right:4px;
 }
 
 // 收起展开
 .weui-custom-ellipsis__fold-btn{
-  font-size:var(--ellipsisFontSize);
-  color:var(--ellipsisFoldBtnColor);
   background: transparent;
   border: 0;
   padding: 0;
   outline: 0;
+  font-size:var(--ellipsisFontSize);
+  color:var(--weui-LINK);
 }
 .weui-custom-ellipsis_unfold{
   .weui-custom-ellipsis__text{

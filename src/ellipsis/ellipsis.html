@@ -17,8 +17,11 @@
       <p>优点代码成本低，缺点是省略号左右间距不可定制，且不能两端对齐</p>
       <p>css变量--ellipsisFontSize: 字号</p>
       <p>css变量--ellipsisColor: 字体颜色</p>
-      <p>css变量--ellipsisLine: 最大行数（指定最大行数时需同时指定weui-ellipsis__placeholder的高度为n-1行高度，为了消除不同缩放倍数下的取整问题，weui-ellipsis__placeholder的高度需要用真实n-1行文字来实现，不能直接用em）</p>
+      <p>css变量--ellipsisLine: 最大行数</p>
       <p>原理见：<a href="./demo.html">原理A</a> 和 <a href="./demo.html">原理C</a> </p>
+    </div>
+    <div class="demo_tips">
+      <p>指定最大行数时需同时指定weui-ellipsis__placeholder的高度为n-1行高度，为了消除不同缩放倍数下的取整问题，weui-ellipsis__placeholder的高度需要用真实n-1行文字来实现，不能直接用em</p>
     </div>
   </div>
 
@@ -44,9 +47,13 @@
     <div class="demo_title">A2 原生省略号后带内容</div>
     <div class="demo_desc">
       <p>超过最大行数</p>
-      <p>weui-ellipsis的高度为最大行数高度:a</p>
-      <p>weui-ellipsis__text的高度为真实高度:b</p>
-      <p>b - a > 1 的时候表示需要出省略号，往weui-ellipsis加weui-ellipsis_multi</p>
+      <p>
+        weui-ellipsis的高度为最大行数高度:a</br>
+        weui-ellipsis__text的高度为真实高度:b</br>
+        b - a > 1 的时候表示需要出省略号，往weui-ellipsis加weui-ellipsis_multi
+      </p>
+    </div>
+    <div class="demo_tips">
       <p>备注：由于浏览器对height会有小数点的取整，所以这里判断条件是1，而不是0</p>
     </div>
     <div class="weui-ellipsis weui-ellipsis_multi">
