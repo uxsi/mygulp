@@ -77,7 +77,7 @@
   width: 50%;
   &:before{
     display:block;
-    content:"12";
+    content:"11";
     width:0;
     word-wrap:break-word;
   }
@@ -93,6 +93,9 @@
 .weui-custom-ellipsis__symbol{
   font-size:var(--ellipsisFontSize);
   margin-right:4px;
+  &:last-child{
+    margin-right:0;
+  }
 }
 
 // 收起展开
