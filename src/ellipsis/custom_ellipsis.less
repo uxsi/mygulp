@@ -1,48 +1,49 @@
 :root{
-  --ellipsisLine:2;
-  --ellipsisFontSize:1rem;
-  --ellipsisLineHeight:1.4;
-  --ellipsisColor:rgba(0,0,0,.9);
+  --weui-custom-elpsLine:2;
+  --weui-custom-elpsFontSize:1rem;
+  --weui-custom-elpsLineHeight:1.4;
+  --weui-custom-elpsColor:rgba(0,0,0,.9);
 
-  --ellipsisSymbolWidth:60px;
-  --ellipsisSymbolWidthApple:2em;
+  --weui-custom-elpsSymbolFS:60px;
+  --weui-custom-elpsSymbolLSApple:2em;
+  --weui-custom-elpsSymbolFSApple:inherit;
 }
 
 @media(prefers-color-scheme:dark){
   :root{
-    --ellipsisColor:rgba(255,255,255,.8);
+    --weui-custom-elpsColor:rgba(255,255,255,.8);
   }
 }
 
 .weui-custom-ellipsis__wrp {
   position: relative;
-  color:var(--ellipsisColor);
-  font-size:var(--ellipsisFontSize);
-  line-height: var(--ellipsisLineHeight);
+  color:var(--weui-custom-elpsColor);
+  font-size:var(--weui-custom-elpsFontSize);
+  line-height: var(--weui-custom-elpsLineHeight);
   overflow:hidden;
   text-align:justify;
 }
 .weui-custom-ellipsis__text {
   display: -webkit-box;
-  -webkit-line-clamp: var(--ellipsisLine);
+  -webkit-line-clamp: var(--weui-custom-elpsLine);
   -webkit-box-orient: vertical;
   overflow:hidden;
   text-overflow:ellipsis;
 
   color:transparent;
   line-height: 0;
-  font-size: var(--ellipsisSymbolWidth);
+  font-size: var(--weui-custom-elpsSymbolFS);
 }
 @supports (-apple-trailing-word:auto){
   .weui-custom-ellipsis__text {
-    font-size:inherit;
-    letter-spacing:var(--ellipsisSymbolWidthApple);
+    font-size:var(--weui-custom-elpsSymbolFSApple);
+    letter-spacing:var(--weui-custom-elpsSymbolLSApple);
   }
 }
 @supports (-webkit-overflow-scrolling:touch){
   .weui-custom-ellipsis__text {
-    font-size:inherit;
-    letter-spacing:var(--ellipsisSymbolWidthApple);
+    font-size:var(--weui-custom-elpsSymbolFSApple);
+    letter-spacing:var(--weui-custom-elpsSymbolLSApple);
   }
 }
 .weui-custom-ellipsis__text__extra ,
@@ -51,9 +52,9 @@
   vertical-align:top;
 }
 .weui-custom-ellipsis__text__inner {
-  font-size:var(--ellipsisFontSize);
-  line-height:var(--ellipsisLineHeight);
-  color:var(--ellipsisColor);
+  font-size:var(--weui-custom-elpsFontSize);
+  line-height:var(--weui-custom-elpsLineHeight);
+  color:var(--weui-custom-elpsColor);
   letter-spacing:normal;
 }
 .weui-custom-ellipsis {
@@ -86,13 +87,13 @@
   transform: translate(-100%, -100%);
 }
 .weui-custom-ellipsis__extra {
-  text-align: right;
+  display:flex;
+  justify-content: flex-end;
   pointer-events:auto;
-  font-size:0;
 }
 .weui-custom-ellipsis__symbol{
-  font-size:var(--ellipsisFontSize);
   margin-right:4px;
+
   &:last-child{
     margin-right:0;
   }
@@ -104,7 +105,7 @@
   border: 0;
   padding: 0;
   outline: 0;
-  font-size:var(--ellipsisFontSize);
+  font-size:var(--weui-custom-elpsFontSize);
   color:var(--weui-LINK);
 }
 .weui-custom-ellipsis_unfold{

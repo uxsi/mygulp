@@ -1,24 +1,25 @@
 :root{
-  --ellipsisLine:2;
-  --ellipsisFontSize:1rem;
-  --ellipsisColor:rgba(0,0,0,.9);
+  --weui-mask-elpsLine:2;
+  --weui-mask-elpsLineHeight:1.4;
+  --weui-mask-elpsFontSize:1rem;
+  --weui-mask-elpsColor:rgba(0,0,0,.9);
 }
 
 @media(prefers-color-scheme:dark){
   :root{
-    --ellipsisColor:rgba(255,255,255,.8);
+    --weui-mask-elpsColor:rgba(255,255,255,.8);
   }
 }
 
 .weui-mask-ellipsis__wrp{
-  line-height:1.4;
-  font-size:var(--ellipsisFontSize);
-  color:var(--ellipsisColor);
+  line-height:var(--weui-mask-elpsLineHeight);
+  font-size:var(--weui-mask-elpsFontSize);
+  color:var(--weui-mask-elpsColor);
   text-align:justify;
   overflow:hidden;//这个hidden是为了截断.weui-mask-ellipsis的200%宽度
 
   position:relative;
-  max-height:calc(var(--ellipsisLine) * 1.4em);//默认最大行数为2行
+  max-height:calc(var(--weui-mask-elpsLine) * var(--weui-mask-elpsLineHeight) * 1em);//默认最大行数为2行
 
   //让整个区域在达到最大高度前有真实的高度
   &>.weui-mask-ellipsis__text{
@@ -41,7 +42,7 @@
   width:50%;
   &:before{
     display:block;
-    content:"12";
+    content:"11";
     width:0;
     word-wrap:break-word;
   }
