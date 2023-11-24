@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="//res.wx.qq.com/t/wx_fed/weui-source/res/2.5.4/weui.css">
 </head>
 <body>
+  <div style="margin:50px 0" tabindex="0" role="link" onclick="window.location.href = 'https://qq.com';">
+    测试链接
+  </div>
+
   <a href="javascript:void(0);">愚人音乐坊</a>
 
   <a href="#" class="test">你好</a>
@@ -24,5 +28,17 @@
   <div role="link" id="link2">role=link2</div>
   <div tabindex="0" role="link" id="link3">role=link3</div>
   <a tabindex="0" id="link4">原生a链接4</a>
+  <script>
+    function goToLink(event, url) {
+      var type = event.type;
+
+      if (type === 'click' || (type === 'keydown' && event.keyCode === 13)) {
+        window.location.href = url;
+
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }
+  </script>
 </body>
 </html>

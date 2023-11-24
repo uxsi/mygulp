@@ -7,21 +7,65 @@
   <meta name="color-scheme" content="light dark">
   <title></title>
   <style>
-    /* 聚焦加红边框 */
-    button{
-      outline:4px solid red;
+    .focus:focus{
+      color:red;
+    }
+    .focus_nv:focus:not(:focus-visible){
+      border:2px dashed green;
+    }
+    .focus_v:focus-visible{
+      background:blue;
+    }
+
+
+
+
+    .focus_a:focus{
+      color:red;
+    }
+    .focus_a:focus:not(:focus-visible){
+      border:2px dashed green;
+    }
+    .focus_a:focus-visible{
+      background:blue;
+      outline:0;
     }
   </style>
 </head>
 <body>
-  <button class="js_btn" type="button">自动聚焦</button>
+  <p>
+    focus下分visible和非visible，表示ua提供的focus是否可见的特性，默认效果是outline了一个边框
+    不同UI控件用不同设备触发效果不同，比如：
+    按钮鼠标点击会触发non-visible，键盘tab切换则触发了visible
+    输入框鼠标点击和键盘tab都只会触发visible
+    js调用focus则都触发了visible
+  </p>
+  <button class="js_btn focus_a" type="button">按钮</button>
+  <input type="text" value="123" class="js_input focus_a">
+  <a class="js_link focus_a" href="https://weixin.qq.com">跳转</a>
+  <br>
+  <br>
+  <br>
+  <br>
   <a href="https://weixin.qq.com">跳转首页</a>
   <script src="https://zeptojs.com/zepto.min.js"></script>
   <script type="text/javascript">
     $(function(){
-      $('.js_btn').trigger('focus');
+      setTimeout(function(){
+        $('.js_btn').trigger('focus');
+      },1000);
+      setTimeout(function(){
+        $('.js_input').trigger('focus');
+      },2000);
+      setTimeout(function(){
+        $('.js_link').trigger('focus');
+      },3000);
     });
   </script>
+
+  <button type="button" class="focus">focus</button>
+  <button type="button" class="focus_nv">focus:not:visible</button>
+  <button type="button" class="focus_v">focus:visible</button>
 </body>
 </html>
 

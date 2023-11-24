@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    *{margin:0;padding:0;}
+    .wrp{height:200px;overflow:auto;}
+    .hd{height:80px;background:red;}
+    .hd1{position:relative;z-index:1;}
+    .hd2{position:fixed;top:0;left:0;right:0;height:40px;}
+
+    .card_bg{position:sticky;top:40px;height:120px;border:2px solid;border-radius:8px;background:gray;z-index:-1;}
+    .card_bg_bottom{bottom:0;}
+    .content{padding:20px;margin-top:-104px;}
+  </style>
+</head>
+<body>
+  <div class="wrp">
+      <div class="hd hd1">垂直头部</div>
+      <div class="hd hd2">水平头部</div>
+      <div class="card_bg" style="border-color:red;"></div>
+      <div class="content">Adipisicing asperiores provident ab omnis unde Ducimus ducimus consectetur dolore corrupti molestias. Qui quas aliquid perspiciatis repudiandae quam nisi. Magni quidem labore ipsa rerum deserunt Sed animi tenetur recusandae eumAdipisicing asperiores provident ab omnis unde Ducimus ducimus consectetur dolore corrupti molestias. Qui quas aliquid perspiciatis repudiandae quam nisi. Magni quidem labore ipsa rerum deserunt Sed animi tenetur recusandae eum??Adipisicing asperiores provident ab omnis unde Ducimus ducimus consectetur dolore corrupti molestias. Qui quas aliquid perspiciatis repudiandae quam nisi. Magni quidem labore ipsa rerum deserunt Sed animi tenetur recusandae eum?</div>
+      <div class="card_bg bottom" style="border-color:red;"></div>
+  </div>
+</body>
+</html>

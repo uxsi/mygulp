@@ -7,29 +7,40 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
 </head>
 <body>
-  <input type="password" role="">
-  <div role="password">哈喽</div>
+  <a href="#" style="display:block;">
+    <span>hi</span>
+      <div style="display:block" id="xx2xx">
+        你好
+      </div>
+  </a>
+  <div role="link" tabindex="0" style="display:block;">
+    <span>hi</span>
+      <div style="display:block" id="xx1xx">
+        你好
+      </div>
+  </div>
+
+  <div role="option">
+    123
+    <p style="display:inline-table">你好</p>
+    <i style="display:flex;">关闭</i>
+  </div>
+
+  <div id="js_ip_wording_wrp" role="option" aria-labelledby="xx xxx">
+    <span id="xx">hi</span>
+    <span style="display:block;" aria-hidden="true" id="xxx">你好</span>
+  </div>
 
 <div>role option & aria-labelledby</div>
-<div id="lbl_txt1" aria-labelledby="lbl_txt1 lbl_txt2" role="option">
-  <span>
-    你好
-  </span>
-</div>
-<span id="lbl_txt2">
-  关闭
-</span>
-
-<div>no role & aria-labelledby</div>
-<div id="lbl_txt1" aria-labelledby="lbl_txt1 lbl_txt2">
-  <span aria-hidden="true">
-    你好
-  </span>
+<div id="lbl_txt1" aria-labelledby="lbl_txt1" role="option">
+  <span>hi</span>
+  <span>你好</span>
 </div>
 <span aria-hidden="true">
-  <span id="lbl_txt2">
-  关闭
-  </span>
+  <div id="lbl_txt2">
+    关闭
+  </div>
 </span>
+
 </body>
 </html>

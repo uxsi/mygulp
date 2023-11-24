@@ -1,0 +1,14 @@
+@w:1024px;
+
+.box{
+  width:@w;
+  height:0;
+  overflow:hidden;
+}
+
+@media screen and (min-width:@w){
+  :root{
+    background:red;
+  }
+}
+

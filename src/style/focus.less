@@ -1,0 +1,77 @@
+// stylelint-disable selector-nested-pattern
+@x: ~":parent";
+
+.test {
+  &@{x} {
+    color: red;
+  }
+}
+// stylelint-enable selector-nested-pattern
+
+
+.ab(@s:~"::before") {
+  &@{s} {
+    color: red;
+  }
+}
+.t{
+  .ab(~".hi");
+}
+
+.color(@s:~"::before", @r:{}) {
+  &@{s} {
+    color: red;
+    @r();
+  }
+}
+.c{
+  .color(~".xxx",
+    {
+      color:blue;
+    }
+  );
+}
+
+.focus(@offset:-1px, @selector: ~":before", @hoverRule:{}, @activeRule:{}){
+  &:focus{
+    outline:0;
+    position: relative;
+
+    &@{selector} {
+      content: '';
+      position: absolute;
+      left:@offset;
+      right:@offset;
+      top:@offset;
+      bottom:@offset;
+      border-radius: inherit;
+      pointer-events: none;
+      border:1px solid var(--weuiDesktop_Color_OpWhite_0);
+      box-shadow: 0px 0px 0px 3px var(--weuiDesktop_Color_Green_1);
+    }
+
+    &:not(:focus-visible){
+      &@{selector}{
+        border-color:transparent;
+        box-shadow:none;
+      }
+      &:hover{
+        @hoverRule();
+      }
+      &:active{
+        @activeRule();
+      }
+    }
+  }
+}
+
+.ss{
+  .focus(-1px,~":before",
+  {
+    color:red;
+  },
+  {
+    color:blue;
+  });
+}
+
